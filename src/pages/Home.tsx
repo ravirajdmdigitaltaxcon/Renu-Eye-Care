@@ -306,10 +306,14 @@ export function Home() {
             Book your consultation today and take the first step toward better sight.
           </p>
           <div className="relative mt-8 flex flex-wrap justify-center gap-4">
-            <Button size="lg" className="bg-white text-brand-primary hover:bg-brand-section" onClick={() => openModal()}>
-              Book Appointment
-            </Button>
-            <ButtonLink to="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-primary">
+            <Button
+  size="lg"
+  className="bg-[#00a8ab] text-white hover:bg-[#68f1f3] hover:text-black rounded-xl px-8 shadow-lg transition-all duration-300"
+  onClick={() => openModal()}
+>
+  Book Appointment
+</Button>
+            <ButtonLink to="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-[#00a8ab] hover:text-black">
               Contact Us
             </ButtonLink>
           </div>

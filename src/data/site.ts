@@ -170,19 +170,19 @@ export type Doctor = {
 export const DOCTORS: Doctor[] = [
 {
   slug: 'renu-mehta',
-  name: 'Dr. Renu Mehta',
+  name: 'Dr. Arundhati Tamuli Handique',
   role: 'Founder & Cataract Surgeon',
   experience: '25+ Years',
   qualification: 'MBBS, MS (Ophthalmology), FICO',
   languages: ['English', 'Hindi', 'Marathi'],
-  bio: 'Dr. Renu Mehta founded Renu Eye Care Centre with a vision to bring world-class ophthalmology within reach. She has personally performed over 40,000 cataract and refractive procedures.',
+  bio: 'Dr. Arundhati  founded Renu Eye Care Centre with a vision to bring world-class ophthalmology within reach. She has personally performed over 40,000 cataract and refractive procedures.',
   image: 'IMG_DOC_RENU',
   awards: ['Padma Shri nominee 2022', 'Best Eye Surgeon, West India 2020', 'Lifetime Achievement, IOA 2023'],
   treatments: ['Cataract Surgery', 'Premium IOLs', 'Refractive Lens Exchange']
 },
 {
   slug: 'arjun-verma',
-  name: 'Dr. Arjun Verma',
+  name: 'Dr. Abhijit Kumar Handique',
   role: 'Retina Specialist',
   experience: '15+ Years',
   qualification: 'MBBS, MS, FVRS (Retina)',
@@ -194,7 +194,7 @@ export const DOCTORS: Doctor[] = [
 },
 {
   slug: 'priya-nair',
-  name: 'Dr. Priya Nair',
+  name: 'Dr. Rajendra Nath Gogoi',
   role: 'LASIK & Cornea Surgeon',
   experience: '12+ Years',
   qualification: 'MBBS, DNB, Fellowship Cornea',
@@ -204,18 +204,7 @@ export const DOCTORS: Doctor[] = [
   awards: ['Excellence in Refractive Surgery 2021'],
   treatments: ['Contoura LASIK', 'SMILE', 'Keratoconus (C3R)']
 },
-{
-  slug: 'sanjay-rao',
-  name: 'Dr. Sanjay Rao',
-  role: 'Glaucoma & Paediatrics',
-  experience: '18+ Years',
-  qualification: 'MBBS, MS, Glaucoma Fellowship',
-  languages: ['English', 'Hindi', 'Kannada'],
-  bio: 'With a gentle approach beloved by children and a sharp clinical eye for glaucoma, Dr. Rao leads our paediatric and glaucoma services.',
-  image: 'IMG_DOC_SANJAY',
-  awards: ['Community Service Award 2018'],
-  treatments: ['Glaucoma Management', 'Paediatric Eye Care', 'Squint Correction']
-}];
+];
 
 
 export const EYE_PARTS = [
