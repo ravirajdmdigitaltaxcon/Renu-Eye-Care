@@ -28,7 +28,7 @@ export function Services() {
         <div className="mt-16 overflow-hidden rounded-img bg-brand-primary px-6 py-12 text-center text-white sm:px-12">
           <h2 className="text-2xl font-bold sm:text-3xl">Not sure which service you need?</h2>
           <p className="mt-3 text-white/80">Book a consultation and our specialists will guide you.</p>
-          <Button size="lg" className="mt-6 bg-white text-brand-primary hover:bg-brand-section" onClick={() => openModal()}>
+          <Button size="lg" className="mt-6 bg-white text-black" onClick={() => openModal()}>
             Get an Appointment
           </Button>
         </div>

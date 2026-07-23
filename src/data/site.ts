@@ -15,10 +15,10 @@ import {
 export const CLINIC = {
   name: 'Renu Eye Care Centre',
   tagline: 'Vision Beyond Sight',
-  phone: '+91 98765 43210',
-  emergency: '+91 98765 00000',
+  phone: '+91 60260 96029',
+  emergency: '+91 60260 96029',
   email: 'care@renueye.com',
-  address: '221 Vision Avenue, Medical District, Mumbai 400001',
+  address: 'Graham Bazar, Dibrugarh, Assam 786001',
   hours: 'Mon–Sat: 9:00 AM – 8:00 PM · Sun: 10:00 AM – 2:00 PM',
   whatsapp: 'https://wa.me/919876543210'
 };
