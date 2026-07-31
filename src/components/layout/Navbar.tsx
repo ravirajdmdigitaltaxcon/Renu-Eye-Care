@@ -11,6 +11,7 @@ import { Button } from '../ui/Button';
 import { useAppointment } from '../../context/AppointmentContext';
 import { CLINIC } from '../../data/site';
 import Logo from '../assets/logo.gif'; // ya logo.svg
+import { useNavigate } from "react-router-dom";
 const NAV = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
@@ -49,6 +50,7 @@ export function Navbar() {
 
   const linkClass = ({ isActive }: { isActive: boolean; }) =>
     `relative text-sm font-medium transition-colors ${isActive ? 'text-brand-primary' : 'text-brand-dark hover:text-brand-primary'}`;
+const navigate = useNavigate();
 
 
   return (
@@ -123,15 +125,18 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <a
-            href={`tel:${CLINIC.phone}`}
-            className="hidden items-center gap-2 text-sm font-semibold text-brand-primary md:flex">
-
-            <PhoneIcon className="h-4 w-4" /> {CLINIC.phone}
-          </a>
-          <Button size="sm" className="hidden sm:inline-flex" onClick={() => openModal()}>
+    
+          {/* <Button size="sm" className="hidden sm:inline-flex" onClick={() => openModal()}>
             Book Appointment
-          </Button>
+          </Button> */}
+
+          <Button
+  size="sm"
+  className="hidden sm:inline-flex"
+  onClick={() => navigate("/appointment")}
+>
+  Book Appointment
+</Button>
           <button
             className="grid h-10 w-10 place-items-center rounded-btn bg-brand-section text-brand-primary lg:hidden"
             onClick={() => setMobileOpen((o) => !o)}

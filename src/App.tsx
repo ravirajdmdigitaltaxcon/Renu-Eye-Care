@@ -19,7 +19,7 @@ import { Contact } from './pages/Contact';
 import { FAQPage } from './pages/FAQPage';
 import { Privacy } from './pages/Privacy';
 import { NotFound } from './pages/NotFound';
-
+import AppointmentPage from "./pages/AppointmentPage";
 export function App() {
   return (
     <AppointmentProvider>
@@ -42,6 +42,7 @@ export function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/appointment" element={<AppointmentPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
