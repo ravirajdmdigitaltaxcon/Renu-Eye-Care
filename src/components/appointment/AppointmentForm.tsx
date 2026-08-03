@@ -1,6 +1,7 @@
 import React, { useState, memo } from 'react';
 import { motion } from 'framer-motion';
-import { CheckIcon } from 'lucide-react';
+import { CheckIcon, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { Button } from '../ui/Button';
 import { DOCTORS } from '../../data/site';
 
@@ -39,6 +40,60 @@ export const AppointmentForm = memo(function AppointmentForm({
   compact,
 }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    patient_name: "",
+    mobile: "",
+    email: "",
+    age: "",
+    gender: "",
+    department: presetDepartment || "",
+    doctor: presetDoctor || "",
+    date: "",
+    time: "",
+    concern: "",
+    new_patient: "",
+    glasses: "",
+    contact_lenses: "",
+    diabetes: "",
+    blood_pressure: "",
+    message: "",
+    city: "",
+    state: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      // ⚠️ Replace these with your actual EmailJS credentials
+      await emailjs.send(
+        "service_3kf7qsm",
+        "template_nv8j5ef",
+        formData,
+        "fdTb13vM3ZpEcu6Bz"
+      );
+      
+      setSubmitted(true);
+      onSuccess?.();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert("Unable to send appointment request. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (submitted) {
     return (
@@ -64,12 +119,7 @@ export const AppointmentForm = memo(function AppointmentForm({
 
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSubmitted(true);
-        onSuccess?.();
-      }}
-      // Added w-full, max-w-[78rem], and mx-auto to stretch and center the form
+      onSubmit={handleSubmit}
       className={`grid gap-x-9 gap-y-3  ${compact ? 'grid-cols-1' : 'sm:grid-cols-2'}`}
       noValidate
     >
@@ -78,27 +128,71 @@ export const AppointmentForm = memo(function AppointmentForm({
       
       <div>
         <label htmlFor="appt-name" className={labelCls}>Full Name *</label>
-        <input id="appt-name" required className={field} placeholder="Full name" autoComplete="name" />
+        <input 
+          id="appt-name" 
+          name="patient_name"
+          value={formData.patient_name}
+          onChange={handleChange}
+          required 
+          className={field} 
+          placeholder="Full name" 
+          autoComplete="name" 
+        />
       </div>
 
       <div>
         <label htmlFor="appt-phone" className={labelCls}>Mobile Number *</label>
-        <input id="appt-phone" required type="tel" className={field} placeholder="Mobile number" autoComplete="tel" />
+        <input 
+          id="appt-phone" 
+          name="mobile"
+          value={formData.mobile}
+          onChange={handleChange}
+          required 
+          type="tel" 
+          className={field} 
+          placeholder="Mobile number" 
+          autoComplete="tel" 
+        />
       </div>
 
       <div>
         <label htmlFor="appt-email" className={labelCls}>Email Address (Optional)</label>
-        <input id="appt-email" type="email" className={field} placeholder="Email address" autoComplete="email" />
+        <input 
+          id="appt-email" 
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          type="email" 
+          className={field} 
+          placeholder="Email address" 
+          autoComplete="email" 
+        />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="appt-age" className={labelCls}>Age</label>
-          <input id="appt-age" type="number" min="0" max="120" className={field} placeholder="Age" />
+          <input 
+            id="appt-age" 
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            type="number" 
+            min="0" 
+            max="120" 
+            className={field} 
+            placeholder="Age" 
+          />
         </div>
         <div>
           <label htmlFor="appt-gender" className={labelCls}>Gender</label>
-          <select id="appt-gender" className={field} defaultValue="">
+          <select 
+            id="appt-gender" 
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            className={field}
+          >
             <option value="" disabled>Select</option>
             <option>Female</option>
             <option>Male</option>
@@ -112,7 +206,13 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div>
         <label htmlFor="appt-dept" className={labelCls}>Select Department</label>
-        <select id="appt-dept" className={field} defaultValue={presetDepartment ?? ''}>
+        <select 
+          id="appt-dept" 
+          name="department"
+          value={formData.department}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select department</option>
           {EYE_SERVICES.map((s) => (
             <option key={s} value={s}>{s}</option>
@@ -122,7 +222,13 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div>
         <label htmlFor="appt-doctor" className={labelCls}>Select Doctor</label>
-        <select id="appt-doctor" className={field} defaultValue={presetDoctor ?? ''}>
+        <select 
+          id="appt-doctor" 
+          name="doctor"
+          value={formData.doctor}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="">Any available</option>
           {DOCTORS.map((d) => (
             <option key={d.slug} value={d.name}>{d.name}</option>
@@ -132,19 +238,41 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div>
         <label htmlFor="appt-date" className={labelCls}>Preferred Date *</label>
-        <input id="appt-date" required type="date" className={field} />
+        <input 
+          id="appt-date" 
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          required 
+          type="date" 
+          className={field} 
+        />
       </div>
       
       <div>
         <label htmlFor="appt-time" className={labelCls}>Preferred Time Slot *</label>
-        <input id="appt-time" required type="time" className={field} />
+        <input 
+          id="appt-time" 
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
+          required 
+          type="time" 
+          className={field} 
+        />
       </div>
 
       {/* 👁️ Eye Problem */}
       {!compact && <h4 className={sectionCls}>👁️ Eye Problem</h4>}
       <div className="sm:col-span-2">
         <label htmlFor="appt-concern" className={labelCls}>What is your concern?</label>
-        <select id="appt-concern" className={field} defaultValue="">
+        <select 
+          id="appt-concern" 
+          name="concern"
+          value={formData.concern}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select concern</option>
           <option>Blurred Vision</option>
           <option>Eye Pain</option>
@@ -165,7 +293,13 @@ export const AppointmentForm = memo(function AppointmentForm({
       
       <div>
         <label htmlFor="appt-new" className={labelCls}>Are you a new patient?</label>
-        <select id="appt-new" className={field} defaultValue="">
+        <select 
+          id="appt-new" 
+          name="new_patient"
+          value={formData.new_patient}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select</option>
           <option>Yes</option>
           <option>No</option>
@@ -174,7 +308,13 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div>
         <label htmlFor="appt-glasses" className={labelCls}>Do you wear glasses?</label>
-        <select id="appt-glasses" className={field} defaultValue="">
+        <select 
+          id="appt-glasses" 
+          name="glasses"
+          value={formData.glasses}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select</option>
           <option>Yes</option>
           <option>No</option>
@@ -183,7 +323,13 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div>
         <label htmlFor="appt-contacts" className={labelCls}>Do you wear contact lenses?</label>
-        <select id="appt-contacts" className={field} defaultValue="">
+        <select 
+          id="appt-contacts" 
+          name="contact_lenses"
+          value={formData.contact_lenses}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select</option>
           <option>Yes</option>
           <option>No</option>
@@ -192,7 +338,13 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div>
         <label htmlFor="appt-diabetes" className={labelCls}>Do you have Diabetes?</label>
-        <select id="appt-diabetes" className={field} defaultValue="">
+        <select 
+          id="appt-diabetes" 
+          name="diabetes"
+          value={formData.diabetes}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select</option>
           <option>Yes</option>
           <option>No</option>
@@ -201,7 +353,13 @@ export const AppointmentForm = memo(function AppointmentForm({
 
       <div className="sm:col-span-2">
         <label htmlFor="appt-bp" className={labelCls}>Do you have High Blood Pressure?</label>
-        <select id="appt-bp" className={field} defaultValue="">
+        <select 
+          id="appt-bp" 
+          name="blood_pressure"
+          value={formData.blood_pressure}
+          onChange={handleChange}
+          className={field}
+        >
           <option value="" disabled>Select</option>
           <option>Yes</option>
           <option>No</option>
@@ -212,18 +370,40 @@ export const AppointmentForm = memo(function AppointmentForm({
       {!compact && <h4 className={sectionCls}>💬 Additional Information</h4>}
       <div className="sm:col-span-2">
         <label htmlFor="appt-msg" className={labelCls}>Describe your symptoms</label>
-        <textarea id="appt-msg" rows={3} className={field} placeholder="Describe your symptoms (optional)" />
+        <textarea 
+          id="appt-msg" 
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows={3} 
+          className={field} 
+          placeholder="Describe your symptoms (optional)" 
+        />
       </div>
 
       {/* 📍 Location */}
       {!compact && <h4 className={sectionCls}>📍 Location</h4>}
       <div>
         <label htmlFor="appt-city" className={labelCls}>City</label>
-        <input id="appt-city" className={field} placeholder="City" />
+        <input 
+          id="appt-city" 
+          name="city"
+          value={formData.city}
+          onChange={handleChange}
+          className={field} 
+          placeholder="City" 
+        />
       </div>
       <div>
         <label htmlFor="appt-state" className={labelCls}>State (Optional)</label>
-        <input id="appt-state" className={field} placeholder="State" />
+        <input 
+          id="appt-state" 
+          name="state"
+          value={formData.state}
+          onChange={handleChange}
+          className={field} 
+          placeholder="State" 
+        />
       </div>
 
       {/* ✅ Consent */}
@@ -240,8 +420,20 @@ export const AppointmentForm = memo(function AppointmentForm({
       </div>
 
       <div className="sm:col-span-2 mt-2">
-        <Button className="w-full" magnetic={false}>
-          Book Appointment
+        <Button 
+          className="w-full flex items-center justify-center gap-2" 
+          magnetic={false}
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            "Book Appointment"
+          )}
         </Button>
       </div>
     </form>

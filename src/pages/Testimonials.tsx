@@ -1,9 +1,4 @@
 
-
-
-
-
-import React from 'react';
 import { QuoteIcon, StarIcon, PlayIcon } from 'lucide-react';
 import { PageHero } from '../components/layout/PageHero';
 import { Reveal } from '../components/ui/Reveal';

@@ -11,6 +11,12 @@ import {
   SparklesIcon,
   MicroscopeIcon } from
 'lucide-react';
+import { GiDna2 } from "react-icons/gi";
+import { FaRegEye } from "react-icons/fa6";
+import { TbActivity } from "react-icons/tb";
+import { TbMicroscope } from "react-icons/tb";
+import { LuOrbit } from "react-icons/lu";
+import { LuZap } from "react-icons/lu";
 
 export const CLINIC = {
   name: 'Renu Eye Care Centre',
@@ -267,12 +273,12 @@ export const EYE_PARTS = [
 
 
 export const TECHNOLOGIES = [
-{ name: 'LASIK Suite', desc: 'Contoura & SMILE laser platforms', icon: ScanEyeIcon },
-{ name: 'OCT Imaging', desc: 'Cross-sectional retinal scans', icon: ActivityIcon },
-{ name: 'Retina Lab', desc: 'Wide-field fundus imaging', icon: EyeIcon },
-{ name: 'Phaco System', desc: 'Micro-incision cataract removal', icon: MicroscopeIcon },
-{ name: 'Cornea Analyser', desc: 'Topography & tomography', icon: StethoscopeIcon },
-{ name: 'AI Diagnosis', desc: 'Deep-learning screening support', icon: BrainIcon }];
+{ name: 'Heidelberg Anterion', desc: 'Advanced OCT, AS-OCT & Optical Biometry for precise eye diagnostics.', icon: GiDna2  },
+{ name: 'Zeiss Cirrus HD-OCT', desc: 'High-resolution retinal imaging for glaucoma and macular disease detection.', icon: FaRegEye  },
+{ name: 'Alcon Centurion Vision System', desc: 'Premium phacoemulsification technology for advanced cataract surgery.', icon: TbActivity  },
+{ name: 'Alcon Constellation Vision System', desc: 'State-of-the-art vitreo-retinal surgical platform for complex retina procedures.', icon: TbMicroscope  },
+{ name: 'Humphrey Field Analyzer 3', desc: 'Gold-standard visual field testing for glaucoma diagnosis and monitoring.', icon: LuOrbit  },
+{ name: 'Zeiss Visulas YAG-III Laser', desc: 'Precision Nd:YAG laser for capsulotomy, iridotomy, and other laser eye procedures.', icon: LuZap  }];
 
 
 export const TESTIMONIALS = [
