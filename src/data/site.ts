@@ -21,19 +21,19 @@ import { LuZap } from "react-icons/lu";
 export const CLINIC = {
   name: 'Renu Eye Care Centre',
   tagline: 'Vision Beyond Sight',
-  phone: '+91 60260 96029',
-  emergency: '+91 60260 96029',
-  email: 'care@renueye.com',
+  phone: '+91 6026096027',
+  emergency: '+91 6026096029',
+  email: 'renueyecarecenter@gmail.com',
   address: 'Graham Bazar, Dibrugarh, Assam 786001',
-  hours: 'Mon–Sat: 9:00 AM – 8:00 PM · Sun: 10:00 AM – 2:00 PM',
-  whatsapp: 'https://wa.me/919876543210'
+  hours: 'Mon–Sat: 8:00 AM – 8:00 PM · Sun: 08:00 AM – 12:00 PM',
+  whatsapp: 'https://wa.me/916026096027'
 };
 
 export const STATS = [
-{ value: 25, suffix: '+', label: 'Years Experience' },
-{ value: 100000, suffix: '+', label: 'Happy Patients' },
-{ value: 50, suffix: '+', label: 'Awards Won' },
-{ value: 98, suffix: '%', label: 'Success Rate' }];
+{ value: 30, suffix: '+', label: 'Years Experience' },
+{ value: 300, suffix: '+', label: 'Happy Patients' },
+{ value: 20, suffix: '+', label: 'Awards Won' },
+{ value: 99, suffix: '%', label: 'Success Rate' }];
 
 
 export type Service = {

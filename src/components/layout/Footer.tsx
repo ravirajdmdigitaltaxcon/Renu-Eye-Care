@@ -1,9 +1,4 @@
-
-
-
-
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
@@ -17,8 +12,9 @@ import {
   TwitterIcon,
   LinkedinIcon,
   SendIcon,
-  CheckIcon } from
-'lucide-react';
+  CheckIcon
+} from
+  'lucide-react';
 import { CLINIC, SERVICES, DOCTORS } from '../../data/site';
 
 const socials = [FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon];
@@ -63,7 +59,7 @@ export function Footer() {
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">Quick Links</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {['About', 'Doctors', 'Technology', 'Testimonials', 'Pricing', 'FAQ'].map((l) =>
-              <li key={l}>
+                <li key={l}>
                   <Link to={`/${l.toLowerCase()}`} className="text-slate-400 transition-colors hover:text-brand-secondary">
                     {l}
                   </Link>
@@ -76,11 +72,11 @@ export function Footer() {
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white">Services</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {SERVICES.slice(0, 6).map((s) =>
-              <li key={s.slug}>
+                <li key={s.slug}>
                   <Link
-                  to={`/services/${s.slug}`}
-                  className="text-slate-400 transition-colors hover:text-brand-secondary">
-                  
+                    to={`/services/${s.slug}`}
+                    className="text-slate-400 transition-colors hover:text-brand-secondary">
+
                     {s.title}
                   </Link>
                 </li>
@@ -97,7 +93,7 @@ export function Footer() {
                 e.preventDefault();
                 setSubscribed(true);
               }}>
-              
+
               <div className="flex overflow-hidden rounded-input bg-white/10 p-1">
                 <input
                   type="email"
@@ -105,12 +101,12 @@ export function Footer() {
                   placeholder="Your email"
                   aria-label="Email address"
                   className="w-full bg-transparent px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none" />
-                
+
                 <button
                   type="submit"
                   aria-label="Subscribe"
                   className="grid w-11 shrink-0 place-items-center rounded-btn bg-brand-primary text-white transition-colors hover:bg-brand-secondary">
-                  
+
                   {subscribed ? <CheckIcon className="h-4 w-4" /> : <SendIcon className="h-4 w-4" />}
                 </button>
               </div>
@@ -118,13 +114,13 @@ export function Footer() {
             </form>
             <div className="mt-6 flex gap-3">
               {socials.map((Icon, i) =>
-              <motion.a
-                key={i}
-                href="#"
-                whileHover={{ y: -3 }}
-                className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-slate-300 transition-colors hover:bg-brand-primary hover:text-white"
-                aria-label="Social link">
-                
+                <motion.a
+                  key={i}
+                  href="#"
+                  whileHover={{ y: -3 }}
+                  className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-slate-300 transition-colors hover:bg-brand-primary hover:text-white"
+                  aria-label="Social link">
+
                   <Icon className="h-4 w-4" />
                 </motion.a>
               )}
@@ -135,10 +131,13 @@ export function Footer() {
         <div className="mt-12 overflow-hidden rounded-card border border-white/10">
           <iframe
             title="Clinic location"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=72.80%2C18.92%2C72.86%2C18.96&layer=mapnik"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.3558301588923!2d94.91495117610829!3d27.48930713507337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374099947260150d%3A0x5cf9800b6bc76d5b!2sRenu%20Eye%20Care%20Centre!5e0!3m2!1sen!2sin!4v1785738972404!5m2!1sen!2sin"
             className="h-56 w-full grayscale"
-            loading="lazy" />
-          
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">

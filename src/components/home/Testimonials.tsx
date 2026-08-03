@@ -1,19 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { QuoteIcon, StarIcon, ChevronLeftIcon, ChevronRightIcon, PlayIcon } from 'lucide-react';

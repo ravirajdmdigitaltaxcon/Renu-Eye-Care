@@ -59,7 +59,7 @@ export function Home() {
               </div>
               <div className="absolute -bottom-6 -right-2 flex items-center gap-3 rounded-card bg-brand-primary px-5 py-4 text-white shadow-float">
                 <span className="text-3xl font-bold">
-                  <Counter value={25} suffix="+" />
+                  <Counter value={30} suffix="+" />
                 </span>
                 <span className="text-sm leading-tight">Years of<br />excellence</span>
               </div>

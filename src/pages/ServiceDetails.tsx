@@ -1,9 +1,3 @@
-
-
-
-
-
-import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { CheckCircle2Icon, PhoneIcon, ActivityIcon, StethoscopeIcon, ArrowRightIcon } from 'lucide-react';
 import { PageHero } from '../components/layout/PageHero';
@@ -42,7 +36,7 @@ export function ServiceDetails() {
                 <h3 className="mt-3 font-display text-lg font-bold text-brand-dark">Symptoms</h3>
                 <ul className="mt-3 space-y-2">
                   {service.symptoms.map((s) =>
-                  <li key={s} className="flex items-start gap-2 text-sm text-slate-600">
+                    <li key={s} className="flex items-start gap-2 text-sm text-slate-600">
                       <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" /> {s}
                     </li>
                   )}
@@ -53,7 +47,7 @@ export function ServiceDetails() {
                 <h3 className="mt-3 font-display text-lg font-bold text-brand-dark">Treatment & Technology</h3>
                 <ul className="mt-3 space-y-2">
                   {service.treatment.map((t) =>
-                  <li key={t} className="flex items-start gap-2 text-sm text-slate-600">
+                    <li key={t} className="flex items-start gap-2 text-sm text-slate-600">
                       <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" /> {t}
                     </li>
                   )}
@@ -78,10 +72,10 @@ export function ServiceDetails() {
               <h3 className="mt-4 font-display text-lg font-bold">Book {service.title}</h3>
               <p className="mt-2 text-sm text-white/80">Speak to a specialist and plan your treatment.</p>
               <Button
-                className="mt-4 w-full bg-white text-brand-primary hover:bg-brand-section"
+                className="mt-4 w-full bg-[#0d3d3c] text-white border-2  hover:bg-brand-primary"
                 magnetic={false}
-                onClick={() => openModal({ department: service.title })}>
-                
+                onClick={() => openModal({ department: service.title })}
+              >
                 Book Appointment
               </Button>
             </div>
@@ -96,7 +90,7 @@ export function ServiceDetails() {
               <h3 className="font-display font-bold text-brand-dark">Other services</h3>
               <ul className="mt-3 space-y-2">
                 {SERVICES.filter((s) => s.slug !== service.slug).slice(0, 6).map((s) =>
-                <li key={s.slug}>
+                  <li key={s.slug}>
                     <Link to={`/services/${s.slug}`} className="flex items-center gap-2 text-sm text-slate-600 hover:text-brand-primary">
                       <ArrowRightIcon className="h-3.5 w-3.5" /> {s.title}
                     </Link>
@@ -113,7 +107,7 @@ export function ServiceDetails() {
           <SectionTitle eyebrow="Specialists" title="Doctors for this service" />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {DOCTORS.map((d, i) =>
-            <DoctorCard key={d.slug} doctor={d} index={i} />
+              <DoctorCard key={d.slug} doctor={d} index={i} />
             )}
           </div>
         </div>

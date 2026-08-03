@@ -1,10 +1,3 @@
-
-
-
-
-
-
-import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { XIcon, CalendarHeartIcon } from 'lucide-react';
 import { useAppointment } from '../../context/AppointmentContext';

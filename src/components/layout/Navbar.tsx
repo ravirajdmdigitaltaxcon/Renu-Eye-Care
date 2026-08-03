@@ -24,7 +24,6 @@ const NAV = [
 
 const MORE = [
   { label: 'Technology', to: '/technology' },
-  { label: 'Pricing', to: '/pricing' },
   { label: 'Testimonials', to: '/testimonials' },
   { label: 'FAQ', to: '/faq' }];
 

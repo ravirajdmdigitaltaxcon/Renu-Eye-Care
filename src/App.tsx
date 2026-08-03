@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppointmentProvider } from './context/AppointmentContext';
 import { Layout } from './components/layout/Layout';
@@ -14,7 +12,6 @@ import { Technology } from './pages/Technology';
 import { Blog } from './pages/Blog';
 import { BlogDetails } from './pages/BlogDetails';
 import { TestimonialsPage } from './pages/Testimonials';
-import { Pricing } from './pages/Pricing';
 import { Contact } from './pages/Contact';
 import { FAQPage } from './pages/FAQPage';
 import { Privacy } from './pages/Privacy';
@@ -37,7 +34,6 @@ export function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogDetails />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
-            <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/privacy" element={<Privacy />} />

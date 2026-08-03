@@ -78,7 +78,7 @@ export const Hero = memo(function Hero() {
             variants={item}
             className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-btn font-semibold text-brand-primary shadow-float"
           >
-            <ShieldCheckIcon className="h-4 w-4" /> NABH Accredited · 25+ Years
+            <ShieldCheckIcon className="h-4 w-4" /> NABH Accredited · 30+ Years
             of Trust
           </motion.span>
 
@@ -152,7 +152,7 @@ export const Hero = memo(function Hero() {
               ))}
             </div>
             <p className="mt-1 text-sm font-bold text-brand-dark">4.8 / 5.0</p>
-            <p className="text-[11px] text-slate-400">348+ patient reviews</p>
+            <p className="text-[11px] text-slate-400">300+ patient reviews</p>
           </motion.div>
         </motion.div>
       </div>
