@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import {
   CheckCircle2Icon,
-  PlayIcon,
   ArrowRightIcon,
   TargetIcon,
   HeartHandshakeIcon } from
@@ -15,7 +13,6 @@ import { Button, ButtonLink } from '../components/ui/Button';
 import { ServiceCard } from '../components/cards/ServiceCard';
 import { DoctorCard } from '../components/cards/DoctorCard';
 import { EyeExplorer } from '../components/eye/EyeExplorer';
-import { Testimonials } from '../components/home/Testimonials';
 import { FAQ } from '../components/ui/FAQ';
 import { useAppointment } from '../context/AppointmentContext';
 import { STATS, SERVICES, DOCTORS, TECHNOLOGIES, FAQS, BLOG } from '../data/site';
@@ -159,19 +156,26 @@ export function Home() {
             </div>
           </div>
           <Reveal scale>
-            <div className="group relative overflow-hidden rounded-img shadow-glass">
-              <img src={IMAGES.IMG_SERVICE} alt="Advanced eye surgery technology" width={600} height={450} loading="lazy" decoding="async" className="w-full object-cover" />
-              <button
-                onClick={() => openModal()}
-                className="absolute inset-0 grid place-items-center bg-brand-dark/20"
-                aria-label="Play video">
-                
-                <span className="grid h-16 w-16 place-items-center rounded-full bg-white text-brand-primary shadow-float animate-pulse-play">
-                  
-                  <PlayIcon className="h-6 w-6 fill-brand-primary" />
-                </span>
-              </button>
-            </div>
+         <div className="group relative overflow-hidden rounded-img shadow-glass">
+  <img
+    src={IMAGES.IMG_SERVICE}
+    alt="Advanced eye surgery technology"
+    width={600}
+    height={450}
+    loading="lazy"
+    decoding="async"
+    className="w-full object-cover"
+  />
+<iframe
+  className="absolute inset-0 h-full w-full"
+  src="https://www.youtube.com/embed/6CLMXZ4CdO0?start=15&controls=1&rel=0&modestbranding=1&playsinline=1"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; ; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+/>
+</div>
           </Reveal>
         </div>
       </section>
@@ -232,14 +236,12 @@ export function Home() {
             <EyeExplorer />
           </div>
           <div className="mt-10 text-center">
-            <ButtonLink to="/know-your-eyes" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-dark">
+            <ButtonLink to="/know-your-eyes" variant="outline" className="border-white text-white hover:bg-brand-primary hover:text-brand-dark">
               Open full eye explorer <ArrowRightIcon className="h-4 w-4" />
             </ButtonLink>
           </div>
         </div>
       </section>
-
-      <Testimonials />
 
       {/* Blog */}
       <section className="mx-auto max-w-container px-4 py-20 sm:px-6 sm:py-24">
@@ -308,12 +310,12 @@ export function Home() {
           <div className="relative mt-8 flex flex-wrap justify-center gap-4">
             <Button
   size="lg"
-  className="bg-[#00a8ab] text-white hover:bg-[#68f1f3] hover:text-black rounded-xl px-8 shadow-lg transition-all duration-300"
+  className="rounded-xl bg-[#00a8ab] px-8 py-3 text-base font-semibold text-white border-2 border-white shadow-md transition-all duration-300 hover:bg-[#145654] hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
   onClick={() => openModal()}
 >
   Book Appointment
 </Button>
-            <ButtonLink to="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-[#00a8ab] hover:text-black">
+            <ButtonLink to="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-[#145654] hover:text-black">
               Contact Us
             </ButtonLink>
           </div>

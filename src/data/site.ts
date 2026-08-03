@@ -45,6 +45,10 @@ export type Service = {
   symptoms: string[];
   treatment: string[];
   image: string;
+   faqs: {
+    q: string;
+    a: string;
+  }[];
 };
 
 export const SERVICES: Service[] = [
@@ -54,110 +58,609 @@ export const SERVICES: Service[] = [
   icon: EyeIcon,
   short: 'Bladeless, premium-lens cataract removal for crystal-clear vision.',
   description:
-  'Our bladeless micro-incision cataract surgery uses premium intraocular lenses to restore sharp, youthful vision with minimal downtime.',
-  symptoms: ['Cloudy or blurred vision', 'Glare and halos around lights', 'Faded colours', 'Frequent prescription changes'],
-  treatment: ['Phacoemulsification', 'Femtosecond laser assist', 'Premium multifocal IOLs', 'Day-care discharge'],
-  image: 'IMG_CATARACT'
+  'A cataract is a common eye condition in which the natural lens of the eye becomes cloudy, causing blurred vision, glare, and difficulty seeing clearly, especially at night. If left untreated, it can gradually interfere with daily activities such as reading, driving, and recognizing faces. Cataract surgery is a safe and highly effective procedure that removes the cloudy lens and replaces it with a clear artificial intraocular lens (IOL). At Renu Eye Care Centre, we use advanced micro-incision techniques and premium lens options to restore clear vision with faster recovery and long-lasting results.',
+  symptoms: [
+  'Blurred or cloudy vision that gradually worsens over time',
+  'Difficulty seeing at night or in dim lighting',
+  'Increased sensitivity to bright lights and glare, especially while driving',
+  'Halos around lights, particularly at night',
+  'Faded or yellowish colors that appear less vibrant',
+  'Frequent changes in eyeglass or contact lens prescription',
+  'Double vision in one eye (in some cases)',
+  'Difficulty reading, recognizing faces, or performing daily activities due to reduced vision'
+],
+ treatment: [
+  'Comprehensive eye examination and advanced diagnostic testing to assess the severity of the cataract.',
+  'Micro-incision Phacoemulsification surgery to safely remove the cloudy natural lens with minimal discomfort.',
+  'Femtosecond Laser-Assisted Cataract Surgery (FLACS) for enhanced precision and improved surgical outcomes.',
+  'Implantation of premium Intraocular Lenses (IOLs), including Monofocal, Multifocal, Toric, and Extended Depth of Focus (EDOF) lenses based on the patient’s visual needs.',
+  'Day-care procedure performed under local anesthesia, allowing patients to return home the same day.',
+  'Personalized post-operative care with regular follow-up visits to ensure smooth healing and optimal visual recovery.'
+],
+  image:'/Services/Cataract-Surgery.jpg',
+faqs: [
+  {
+    q: 'What is a cataract?',
+    a: 'A cataract is the clouding of the eye’s natural lens, leading to blurred vision, glare, and difficulty seeing clearly.'
+  },
+  {
+    q: 'When should cataract surgery be done?',
+    a: 'Surgery is recommended when cataracts begin to interfere with your daily activities such as reading, driving, or recognizing faces.'
+  },
+  {
+    q: 'Is cataract surgery painful?',
+    a: 'No. Cataract surgery is performed under local anesthesia and is generally painless. Most patients experience little to no discomfort.'
+  },
+  {
+    q: 'How long does the surgery take?',
+    a: 'The procedure usually takes about 15–20 minutes, and patients can return home the same day.'
+  },
+  {
+    q: 'How soon will my vision improve?',
+    a: 'Most patients notice improved vision within a few days, while complete healing may take a few weeks.'
+  },
+  {
+    q: 'Can cataracts come back after surgery?',
+    a: 'No. Cataracts do not return once removed, although some patients may develop a posterior capsule opacity that can be easily treated with a quick laser procedure.'
+  }
+]
 },
 {
   slug: 'lasik',
   title: 'LASIK & Refractive',
   icon: ScanEyeIcon,
-  short: 'Freedom from glasses with blade-free, bladeless LASIK.',
+  short: 'Advanced laser vision correction for freedom from glasses and contact lenses.',
+
   description:
-  'Achieve spectacle independence with our blade-free Contoura and SMILE laser vision correction, personalised to your corneal map.',
-  symptoms: ['Dependence on glasses / contacts', 'Myopia, hyperopia, astigmatism', 'Dry, tired eyes from lenses'],
-  treatment: ['Contoura Vision', 'SMILE laser', 'PRK for thin corneas', 'Same-day recovery'],
-  image: 'IMG_LASIK'
+    'LASIK is a safe and advanced laser vision correction procedure designed to reduce or eliminate the need for glasses or contact lenses. It effectively treats nearsightedness (myopia), farsightedness (hyperopia), and astigmatism by reshaping the cornea with precision laser technology. At Renu Eye Care Centre, we offer personalized refractive solutions using the latest Contoura Vision, SMILE, and PRK technologies to provide clear vision, faster recovery, and long-lasting results.',
+
+  symptoms: [
+    'Difficulty seeing distant objects clearly (Myopia)',
+    'Difficulty seeing nearby objects clearly (Hyperopia)',
+    'Blurred or distorted vision caused by Astigmatism',
+    'Dependence on glasses or contact lenses',
+    'Frequent changes in spectacle prescription',
+    'Eye strain and headaches after prolonged reading or screen use',
+    'Difficulty driving at night due to blurred vision',
+    'Dry or irritated eyes caused by prolonged contact lens wear'
+  ],
+
+  treatment: [
+    'Comprehensive eye examination and corneal mapping to determine LASIK eligibility.',
+    'Blade-free Contoura Vision LASIK for highly customized laser vision correction.',
+    'SMILE (Small Incision Lenticule Extraction) for minimally invasive treatment with faster healing.',
+    'PRK (Photorefractive Keratectomy) for patients with thin corneas or unsuitable for LASIK.',
+    'Advanced Wavefront-guided technology for precise and personalized treatment.',
+    'Post-operative follow-up care to ensure optimal healing and excellent visual outcomes.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is LASIK surgery?',
+      a: 'LASIK is a laser vision correction procedure that reshapes the cornea to reduce or eliminate the need for glasses or contact lenses.'
+    },
+    {
+      q: 'Who is a suitable candidate for LASIK?',
+      a: 'Adults over 18 years with a stable spectacle power, healthy eyes, and sufficient corneal thickness are generally good candidates.'
+    },
+    {
+      q: 'Is LASIK surgery painful?',
+      a: 'No. The procedure is virtually painless as numbing eye drops are used. Most patients experience only mild discomfort for a few hours.'
+    },
+    {
+      q: 'How long does the procedure take?',
+      a: 'The laser treatment usually takes only a few minutes for each eye, while the entire procedure is completed within 20–30 minutes.'
+    },
+    {
+      q: 'How soon can I return to normal activities?',
+      a: 'Most patients can resume normal daily activities within 24–48 hours, although complete healing may take a few weeks.'
+    },
+    {
+      q: 'Are the results of LASIK permanent?',
+      a: 'Yes. The correction is permanent, although natural age-related changes such as presbyopia may still occur later in life.'
+    }
+  ],
+
+  image: '/Services/LASIK & Refractive.webp'
 },
 {
   slug: 'retina',
   title: 'Retina Care',
   icon: ActivityIcon,
-  short: 'Advanced diagnosis and treatment for retinal disorders.',
+  short: 'Comprehensive diagnosis and advanced treatment for retinal diseases to protect and preserve your vision.',
+
   description:
-  'From diabetic retinopathy to macular degeneration, our retina specialists use OCT imaging and micro-surgery to protect your sight.',
-  symptoms: ['Floaters and flashes', 'Distorted central vision', 'Sudden vision loss', 'Diabetic vision changes'],
-  treatment: ['Anti-VEGF injections', 'Laser photocoagulation', 'Vitreo-retinal surgery', 'OCT monitoring'],
-  image: 'IMG_RETINA'
+    'The retina is the light-sensitive layer at the back of the eye that plays a vital role in vision. Diseases affecting the retina, such as diabetic retinopathy, retinal detachment, macular degeneration, and retinal vein occlusion, can lead to permanent vision loss if left untreated. At Renu Eye Care Centre, our retina specialists use advanced diagnostic technology including OCT, Fundus Fluorescein Angiography (FFA), and state-of-the-art surgical techniques to diagnose, monitor, and treat retinal disorders with precision, helping preserve and restore your vision.',
+
+  symptoms: [
+    'Sudden appearance of floaters or black spots in your vision',
+    'Flashes of light in one or both eyes',
+    'Blurred or distorted central vision',
+    'Sudden or gradual loss of vision',
+    'A dark curtain or shadow moving across your vision',
+    'Difficulty reading or recognizing faces',
+    'Diabetic patients experiencing changes in vision',
+    'Wavy or distorted straight lines'
+  ],
+
+  treatment: [
+    'Comprehensive retinal examination using advanced imaging technologies.',
+    'Optical Coherence Tomography (OCT) for detailed retinal assessment.',
+    'Fundus Fluorescein Angiography (FFA) for accurate diagnosis of retinal diseases.',
+    'Intravitreal Anti-VEGF injections for diabetic retinopathy, retinal vein occlusion, and macular degeneration.',
+    'Laser photocoagulation therapy to treat retinal tears and diabetic retinal diseases.',
+    'Advanced Vitreo-Retinal surgery for retinal detachment, vitreous hemorrhage, and macular disorders.',
+    'Regular retinal monitoring and personalized follow-up care to preserve long-term vision.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is the retina?',
+      a: 'The retina is the light-sensitive tissue at the back of the eye that captures images and sends visual signals to the brain, allowing us to see clearly.'
+    },
+    {
+      q: 'Who is at risk of retinal diseases?',
+      a: 'People with diabetes, high blood pressure, high myopia, aging-related eye conditions, or a family history of retinal disorders are at higher risk.'
+    },
+    {
+      q: 'What are the warning signs of retinal problems?',
+      a: 'Flashes of light, sudden floaters, blurred vision, distorted vision, or a curtain-like shadow over your vision require immediate medical attention.'
+    },
+    {
+      q: 'Can retinal diseases cause permanent blindness?',
+      a: 'Yes. If left untreated, many retinal conditions can lead to permanent vision loss. Early diagnosis and timely treatment are essential.'
+    },
+    {
+      q: 'Is retinal surgery safe?',
+      a: 'Modern retinal surgery is highly advanced and safe when performed by experienced retina specialists using the latest technology.'
+    },
+    {
+      q: 'How often should diabetic patients get their retina examined?',
+      a: 'People with diabetes should have a comprehensive dilated retinal examination at least once every year or more frequently if advised by their eye specialist.'
+    }
+  ],
+
+  image: '/Services/Retina-Care.jpg'
 },
 {
   slug: 'cornea',
   title: 'Cornea Services',
   icon: MicroscopeIcon,
-  short: 'Transplants and keratoconus care from expert corneal surgeons.',
+
+  short: 'Advanced diagnosis and treatment for corneal diseases, injuries, and vision restoration.',
+
   description:
-  'Comprehensive corneal care including transplants, cross-linking for keratoconus, and treatment of infections and injuries.',
-  symptoms: ['Progressive blurring', 'Sensitivity to light', 'Corneal scarring', 'Keratoconus'],
-  treatment: ['Corneal transplant (DMEK/DSEK)', 'Collagen cross-linking', 'Specialty contact lenses'],
-  image: 'IMG_CORNEA'
+    'The cornea is the transparent front surface of the eye that plays a vital role in focusing light for clear vision. Diseases, infections, injuries, or conditions such as keratoconus can affect the cornea and lead to blurred vision or even vision loss. At Renu Eye Care Centre, we provide comprehensive corneal care using advanced diagnostic technology and modern surgical techniques, including corneal transplantation, collagen cross-linking, and specialty contact lenses to restore vision and improve eye health.',
+
+  symptoms: [
+    'Blurred or distorted vision',
+    'Eye pain or persistent discomfort',
+    'Redness and irritation of the eye',
+    'Excessive tearing or watery eyes',
+    'Sensitivity to light (Photophobia)',
+    'White spots or scarring on the cornea',
+    'Progressive vision loss due to Keratoconus',
+    'Difficulty wearing contact lenses',
+    'Foreign body sensation in the eye',
+    'Reduced vision following an eye injury or infection'
+  ],
+
+  treatment: [
+    'Comprehensive corneal evaluation using advanced imaging and diagnostic technology.',
+    'Medical treatment for corneal infections, ulcers, allergies, and inflammatory conditions.',
+    'Collagen Cross-Linking (CXL) to strengthen the cornea and slow the progression of Keratoconus.',
+    'Specialty contact lenses, including RGP and Scleral lenses, for improved vision in irregular corneas.',
+    'Corneal Transplantation (PK, DALK, DSEK, and DMEK) for advanced corneal diseases and scarring.',
+    'Management of corneal injuries and ocular surface disorders with personalized treatment plans.',
+    'Regular follow-up care to monitor healing and ensure the best possible visual outcomes.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is the cornea?',
+      a: 'The cornea is the clear, dome-shaped front surface of the eye that focuses light and plays a crucial role in providing clear vision.'
+    },
+    {
+      q: 'What causes corneal diseases?',
+      a: 'Corneal diseases may result from infections, injuries, allergies, inherited conditions like Keratoconus, dry eye disease, or age-related degeneration.'
+    },
+    {
+      q: 'What is Keratoconus?',
+      a: 'Keratoconus is a condition in which the cornea gradually becomes thin and cone-shaped, causing distorted and blurred vision.'
+    },
+    {
+      q: 'When is a corneal transplant required?',
+      a: 'A corneal transplant is recommended when the cornea becomes severely damaged, scarred, or diseased and vision cannot be restored with glasses or contact lenses.'
+    },
+    {
+      q: 'Is corneal transplant surgery safe?',
+      a: 'Yes. Corneal transplantation is a well-established and highly successful procedure when performed by experienced corneal specialists.'
+    },
+    {
+      q: 'Can Keratoconus be cured?',
+      a: 'While Keratoconus cannot be completely cured, treatments such as Collagen Cross-Linking (CXL) can stop its progression, and specialty lenses or surgery can significantly improve vision.'
+    }
+  ],
+
+  image: '/Services/Cornea-Services.jpg'
 },
 {
   slug: 'glaucoma',
   title: 'Glaucoma Care',
   icon: StethoscopeIcon,
-  short: 'Early detection and lifelong management of glaucoma.',
+
+  short: 'Advanced diagnosis and treatment to protect your vision from glaucoma.',
+
   description:
-  'The silent thief of sight is managed with precise pressure monitoring, laser therapy and micro-invasive glaucoma surgery.',
-  symptoms: ['Gradual peripheral vision loss', 'Eye pain or pressure', 'Halos around lights'],
-  treatment: ['Medication management', 'SLT laser therapy', 'MIGS surgery', 'Visual field testing'],
-  image: 'IMG_GLAUCOMA'
+    'Glaucoma is a group of eye diseases that damage the optic nerve, most commonly due to increased intraocular pressure. Often called the "Silent Thief of Sight," glaucoma develops gradually without noticeable symptoms in its early stages and can lead to irreversible vision loss if left untreated. At Renu Eye Care Centre, we provide comprehensive glaucoma screening, advanced diagnostic testing, laser treatments, and minimally invasive surgical procedures to preserve vision and effectively manage the condition.',
+
+  symptoms: [
+    'Gradual loss of peripheral (side) vision',
+    'Blurred vision',
+    'Eye pain or pressure',
+    'Halos around lights',
+    'Redness of the eye',
+    'Severe headache associated with eye pain',
+    'Sudden vision loss in advanced cases',
+    'Nausea and vomiting during acute glaucoma attacks'
+  ],
+
+  treatment: [
+    'Comprehensive glaucoma evaluation including eye pressure measurement and optic nerve assessment.',
+    'Visual field testing to detect and monitor vision loss.',
+    'Optical Coherence Tomography (OCT) for detailed optic nerve analysis.',
+    'Prescription eye drops to reduce intraocular pressure.',
+    'Selective Laser Trabeculoplasty (SLT) for effective pressure control.',
+    'Minimally Invasive Glaucoma Surgery (MIGS) for suitable patients.',
+    'Conventional glaucoma surgery (Trabeculectomy and Glaucoma Drainage Devices) for advanced cases.',
+    'Regular follow-up examinations to monitor disease progression and preserve vision.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is glaucoma?',
+      a: 'Glaucoma is an eye disease that damages the optic nerve, usually due to increased eye pressure, and can lead to permanent vision loss if left untreated.'
+    },
+    {
+      q: 'Why is glaucoma called the Silent Thief of Sight?',
+      a: 'Most people experience no symptoms during the early stages, allowing vision loss to occur gradually without notice.'
+    },
+    {
+      q: 'Can glaucoma be cured?',
+      a: 'Glaucoma cannot be cured, but early diagnosis and appropriate treatment can effectively slow or stop its progression and protect remaining vision.'
+    },
+    {
+      q: 'Who is at higher risk of developing glaucoma?',
+      a: 'People over 40 years of age, those with a family history of glaucoma, diabetes, high eye pressure, or long-term steroid use have a higher risk.'
+    },
+    {
+      q: 'Is glaucoma surgery safe?',
+      a: 'Yes. Modern laser procedures and glaucoma surgeries are safe and highly effective when performed by experienced ophthalmologists.'
+    },
+    {
+      q: 'How often should glaucoma patients have an eye examination?',
+      a: 'The frequency depends on the severity of the disease, but regular follow-up visits are essential to monitor eye pressure and prevent further vision loss.'
+    }
+  ],
+
+  image: '../../public/Services/Glaucoma-Care.jpg'
 },
 {
   slug: 'dry-eye',
   title: 'Dry Eye Clinic',
   icon: DropletIcon,
-  short: 'Lasting relief from chronic dry and irritated eyes.',
+
+  short: 'Comprehensive diagnosis and advanced treatment for dry, irritated, and watery eyes.',
+
   description:
-  'A dedicated dry eye clinic offering tear-film analysis and advanced therapies for lasting comfort in the screen age.',
-  symptoms: ['Burning and grittiness', 'Watery reflex tearing', 'Fluctuating vision', 'Screen fatigue'],
-  treatment: ['IPL therapy', 'LipiFlow', 'Punctal plugs', 'Personalised eye drops'],
-  image: 'IMG_DRYEYE'
+    'Dry Eye Disease is a common condition that occurs when your eyes do not produce enough quality tears or when tears evaporate too quickly. It can cause irritation, burning, redness, fluctuating vision, and discomfort during daily activities, especially while using digital screens. At Renu Eye Care Centre, our dedicated Dry Eye Clinic offers advanced tear film evaluation, personalized treatment plans, and the latest technologies to restore eye comfort, improve tear quality, and protect the ocular surface for long-term relief.',
+
+  symptoms: [
+    'Burning, stinging, or gritty sensation in the eyes',
+    'Persistent dryness and irritation',
+    'Red or inflamed eyes',
+    'Watery eyes due to reflex tearing',
+    'Blurred or fluctuating vision',
+    'Sensitivity to light (Photophobia)',
+    'Eye fatigue during prolonged screen use',
+    'Difficulty wearing contact lenses comfortably',
+    'Stringy mucus around the eyes',
+    'Feeling like something is stuck inside the eye'
+  ],
+
+  treatment: [
+    'Comprehensive dry eye evaluation with advanced tear film analysis.',
+    'Personalized lubricating eye drops and prescription medications.',
+    'Meibomian Gland Dysfunction (MGD) treatment to improve tear quality.',
+    'Intense Pulsed Light (IPL) therapy for evaporative dry eye.',
+    'LipiFlow thermal pulsation treatment to unblock meibomian glands.',
+    'Punctal Plug insertion to retain natural tears and improve lubrication.',
+    'Lifestyle, nutrition, and digital eye strain management for long-term relief.',
+    'Regular follow-up care to monitor treatment response and maintain healthy eyes.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is Dry Eye Disease?',
+      a: 'Dry Eye Disease occurs when your eyes do not produce enough tears or when the tears evaporate too quickly, resulting in irritation and discomfort.'
+    },
+    {
+      q: 'What causes dry eyes?',
+      a: 'Dry eyes may be caused by aging, excessive screen time, air conditioning, certain medications, contact lens use, hormonal changes, or medical conditions such as diabetes and autoimmune diseases.'
+    },
+    {
+      q: 'Can excessive screen time cause dry eyes?',
+      a: 'Yes. Looking at digital screens reduces your blinking rate, causing tears to evaporate faster and increasing the risk of dry eye symptoms.'
+    },
+    {
+      q: 'Is Dry Eye Disease permanent?',
+      a: 'Dry eye is often a chronic condition, but with proper diagnosis and treatment, symptoms can be effectively managed and long-term comfort can be achieved.'
+    },
+    {
+      q: 'Are dry eyes harmful if left untreated?',
+      a: 'Yes. Untreated dry eye can damage the surface of the eye, increase the risk of infection, and negatively affect vision and quality of life.'
+    },
+    {
+      q: 'What treatments are available for dry eyes?',
+      a: 'Treatment may include artificial tears, prescription eye drops, IPL therapy, LipiFlow, punctal plugs, eyelid hygiene, and lifestyle modifications based on the underlying cause.'
+    }
+  ],
+
+  image: '/Services/Dry-Eye-Clinic.webp'
 },
 {
   slug: 'squint',
   title: 'Squint Correction',
   icon: GlassesIcon,
-  short: 'Alignment surgery and therapy for children and adults.',
+
+  short: 'Advanced diagnosis and treatment for squint (strabismus) in children and adults.',
+
   description:
-  'Correcting misaligned eyes for better vision and confidence, with both surgical and non-surgical options.',
-  symptoms: ['Misaligned eyes', 'Double vision', 'Head tilt', 'Eye strain'],
-  treatment: ['Squint surgery', 'Vision therapy', 'Prism glasses', 'Botox for squint'],
-  image: 'IMG_SQUINT'
+    'Squint, also known as Strabismus, is a condition in which the eyes are not properly aligned and may point in different directions. One eye may look straight while the other turns inward, outward, upward, or downward. If left untreated, squint can lead to double vision, poor depth perception, lazy eye (amblyopia), and reduced confidence. At Renu Eye Care Centre, we offer comprehensive evaluation and personalized treatment plans, including vision therapy, prism correction, Botox injections, and advanced squint surgery to restore proper eye alignment and improve binocular vision.',
+
+  symptoms: [
+    'Misaligned or crossed eyes',
+    'One eye turning inward, outward, upward, or downward',
+    'Double vision (Diplopia)',
+    'Frequent head tilt or face turn',
+    'Difficulty focusing on objects',
+    'Poor depth perception',
+    'Eye strain or headaches',
+    'Closing one eye in bright sunlight',
+    'Reduced vision in one eye (Lazy Eye/Amblyopia)',
+    'Difficulty reading or concentrating'
+  ],
+
+  treatment: [
+    'Comprehensive eye examination and binocular vision assessment.',
+    'Prescription glasses to correct refractive errors contributing to squint.',
+    'Vision therapy and eye exercises to improve eye coordination.',
+    'Prism glasses to reduce double vision and improve eye alignment.',
+    'Botulinum (Botox) injections for selected squint conditions.',
+    'Advanced squint (strabismus) surgery to realign the eye muscles.',
+    'Amblyopia (Lazy Eye) treatment with patching or atropine therapy when required.',
+    'Regular follow-up care to monitor eye alignment and visual development.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is a squint (strabismus)?',
+      a: 'A squint is a condition where both eyes do not look in the same direction at the same time due to imbalance of the eye muscles.'
+    },
+    {
+      q: 'Can squint occur in adults?',
+      a: 'Yes. Squint can develop in both children and adults due to nerve problems, trauma, muscle imbalance, or underlying eye conditions.'
+    },
+    {
+      q: 'Can squint be corrected without surgery?',
+      a: 'Yes. Depending on the cause, squint may be treated with glasses, vision therapy, prism lenses, or Botox injections. Surgery is recommended when necessary.'
+    },
+    {
+      q: 'Is squint surgery safe?',
+      a: 'Yes. Squint surgery is a safe and commonly performed procedure that improves eye alignment, appearance, and binocular vision.'
+    },
+    {
+      q: 'Will squint surgery improve vision?',
+      a: 'The primary goal of surgery is to align the eyes. Vision improvement depends on the underlying condition and whether amblyopia or other eye problems are present.'
+    },
+    {
+      q: 'What happens if squint is left untreated?',
+      a: 'Untreated squint can lead to lazy eye (amblyopia), poor depth perception, double vision, and permanent vision problems, especially in children.'
+    }
+  ],
+
+  image: '/Services/Squint-Correction.jpg'
 },
 {
   slug: 'pediatric',
   title: 'Pediatric Eye Care',
   icon: BabyIcon,
-  short: 'Gentle, child-friendly eye care from infancy onward.',
+
+  short: 'Comprehensive eye care for infants, children, and teenagers in a child-friendly environment.',
+
   description:
-  'Specialised care for developing eyes — screening, lazy-eye treatment and myopia control in a friendly environment.',
-  symptoms: ['Squinting or head tilt', 'Sitting too close to screens', 'Lazy eye', 'Frequent eye rubbing'],
-  treatment: ['Amblyopia therapy', 'Myopia control', 'Paediatric glasses', 'Early screening'],
-  image: 'IMG_PEDIATRIC'
+    'Healthy vision is essential for a child’s learning, growth, and overall development. Many childhood eye conditions, such as lazy eye (amblyopia), squint (strabismus), refractive errors, and congenital eye disorders, can be effectively treated if detected early. At Renu Eye Care Centre, our Pediatric Eye Care services provide comprehensive eye examinations, advanced diagnostic evaluations, and personalized treatments in a comfortable and child-friendly environment to ensure the best possible visual development for every child.',
+
+  symptoms: [
+    'Frequent squinting or closing one eye',
+    'Sitting too close to the television or holding books very close',
+    'Crossed or misaligned eyes (Squint)',
+    'Frequent eye rubbing without allergies',
+    'Excessive tearing or watery eyes',
+    'Sensitivity to bright light',
+    'Difficulty concentrating while reading',
+    'Poor performance in school due to vision problems',
+    'White reflex or unusual appearance of the pupil',
+    'Complaints of headaches or blurred vision'
+  ],
+
+  treatment: [
+    'Comprehensive pediatric eye examination using child-friendly diagnostic techniques.',
+    'Prescription of pediatric glasses for refractive errors such as myopia, hyperopia, and astigmatism.',
+    'Amblyopia (Lazy Eye) treatment with patching therapy or atropine eye drops.',
+    'Myopia control using specialized lenses, eye drops, and lifestyle recommendations.',
+    'Diagnosis and management of squint (strabismus) with non-surgical or surgical treatment.',
+    'Screening and treatment of congenital eye disorders and developmental eye diseases.',
+    'Regular vision screening to monitor healthy eye growth and visual development.',
+    'Parental guidance on eye health, screen time, nutrition, and preventive eye care.'
+  ],
+
+  faqs: [
+    {
+      q: 'At what age should my child have their first eye examination?',
+      a: 'A child should have their first comprehensive eye examination within the first year of life, followed by regular check-ups as recommended by the eye specialist.'
+    },
+    {
+      q: 'How do I know if my child has a vision problem?',
+      a: 'Signs include squinting, sitting too close to the TV, frequent eye rubbing, headaches, poor school performance, or difficulty reading.'
+    },
+    {
+      q: 'What is Lazy Eye (Amblyopia)?',
+      a: 'Lazy Eye is a condition where one eye develops weaker vision because the brain favors the stronger eye. Early treatment can significantly improve vision.'
+    },
+    {
+      q: 'Can childhood myopia be controlled?',
+      a: 'Yes. Modern myopia control treatments, including specialized lenses, low-dose atropine eye drops, and lifestyle modifications, can help slow its progression.'
+    },
+    {
+      q: 'Are eye examinations safe for infants and young children?',
+      a: 'Yes. Pediatric eye examinations are completely safe, painless, and specially designed to evaluate childrens vision and eye health.'
+    },
+    {
+      q: 'Why are regular eye check-ups important for children?',
+      a: 'Many childhood eye conditions show no obvious symptoms. Regular eye examinations help detect problems early and support healthy visual development and learning.'
+    }
+  ],
+
+  image: '/Services/Pediatric-Eye-Care.webp'
 },
 {
   slug: 'oculoplasty',
   title: 'Oculoplasty',
   icon: SparklesIcon,
-  short: 'Cosmetic and reconstructive surgery around the eyes.',
+
+  short: 'Expert cosmetic, reconstructive, and functional surgery for the eyelids, tear ducts, and orbit.',
+
   description:
-  'Reconstructive and aesthetic procedures for the eyelids, tear ducts and orbit — restoring both function and appearance.',
-  symptoms: ['Drooping eyelids', 'Watery eyes', 'Eyelid tumours', 'Cosmetic concerns'],
-  treatment: ['Ptosis correction', 'Blepharoplasty', 'Tear-duct surgery', 'Orbital reconstruction'],
-  image: 'IMG_OCULO'
+    'Oculoplasty is a specialized branch of ophthalmology that focuses on the diagnosis and treatment of conditions affecting the eyelids, tear drainage system, eye socket (orbit), and surrounding facial structures. Whether caused by aging, injury, birth defects, tumors, or disease, these conditions can impact both vision and appearance. At Renu Eye Care Centre, we provide advanced reconstructive and cosmetic oculoplastic procedures to restore normal function, enhance facial aesthetics, and improve patients’ quality of life using the latest surgical techniques.',
+
+  symptoms: [
+    'Drooping upper eyelids (Ptosis)',
+    'Excess loose skin around the eyes',
+    'Persistent watery eyes due to blocked tear ducts',
+    'Eyelid swelling or inflammation',
+    'Eyelid lumps, cysts, or tumors',
+    'Difficulty opening or closing the eyes completely',
+    'Sunken or bulging eyes',
+    'Eye injuries affecting the eyelids or surrounding structures',
+    'Cosmetic concerns related to the eyelids',
+    'Facial asymmetry around the eyes'
+  ],
+
+  treatment: [
+    'Comprehensive evaluation of eyelid, tear duct, and orbital disorders.',
+    'Ptosis (drooping eyelid) correction surgery to improve vision and appearance.',
+    'Blepharoplasty (eyelid surgery) for excess skin, puffiness, and rejuvenation.',
+    'Dacryocystorhinostomy (DCR) surgery for blocked tear ducts and excessive watering.',
+    'Removal and reconstruction of eyelid tumors and cysts.',
+    'Orbital surgery for trauma, fractures, tumors, and thyroid eye disease.',
+    'Reconstructive eyelid surgery following injury, burns, or cancer treatment.',
+    'Personalized post-operative care for optimal healing, comfort, and cosmetic outcomes.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is Oculoplasty?',
+      a: 'Oculoplasty is a specialized field of ophthalmology that treats conditions affecting the eyelids, tear ducts, eye socket (orbit), and surrounding facial tissues through medical and surgical procedures.'
+    },
+    {
+      q: 'When should I consult an oculoplasty specialist?',
+      a: 'You should consult an oculoplasty specialist if you have drooping eyelids, watery eyes, eyelid lumps, blocked tear ducts, eye injuries, orbital problems, or wish to improve eyelid appearance.'
+    },
+    {
+      q: 'Is eyelid surgery only for cosmetic purposes?',
+      a: 'No. Many eyelid surgeries are performed to improve vision, treat medical conditions, repair injuries, or restore proper eyelid function in addition to cosmetic enhancement.'
+    },
+    {
+      q: 'What is Blepharoplasty?',
+      a: 'Blepharoplasty is a surgical procedure that removes excess skin and fat from the eyelids to improve both appearance and vision when drooping skin obstructs sight.'
+    },
+    {
+      q: 'Can blocked tear ducts be treated permanently?',
+      a: 'Yes. Most blocked tear ducts can be successfully treated with DCR (Dacryocystorhinostomy) surgery, which restores normal tear drainage.'
+    },
+    {
+      q: 'How long is the recovery after oculoplasty surgery?',
+      a: 'Recovery depends on the procedure performed, but most patients can resume normal daily activities within one to two weeks with proper post-operative care.'
+    }
+  ],
+
+  image: '/Services/Oculoplasty.webp'
 },
 {
   slug: 'neuro-ophthalmology',
   title: 'Neuro-Ophthalmology',
   icon: BrainIcon,
-  short: 'Care for vision problems linked to the nervous system.',
+
+  short: 'Specialized care for vision disorders related to the optic nerve and brain.',
+
   description:
-  'Diagnosis and management of complex vision issues arising from the optic nerve and brain, in a multidisciplinary setting.',
-  symptoms: ['Sudden vision loss', 'Double vision', 'Unequal pupils', 'Optic nerve swelling'],
-  treatment: ['Neuro-imaging', 'Visual field analysis', 'Medical management', 'Coordinated care'],
-  image: 'IMG_NEURO'
-}];
+    'Neuro-Ophthalmology is a specialized field that focuses on vision problems caused by disorders affecting the optic nerve, brain, and nervous system. These conditions may lead to sudden vision loss, double vision, abnormal eye movements, or visual field defects. Early diagnosis is essential, as many neuro-ophthalmic conditions may be associated with neurological diseases such as stroke, multiple sclerosis, brain tumors, or optic nerve disorders. At Renu Eye Care Centre, we provide comprehensive neuro-ophthalmic evaluation using advanced diagnostic technology and collaborate with neurologists and other specialists to ensure accurate diagnosis and effective treatment.',
+
+  symptoms: [
+    'Sudden or gradual vision loss',
+    'Double vision (Diplopia)',
+    'Blurred or distorted vision',
+    'Loss of peripheral (side) vision',
+    'Unequal pupil size (Anisocoria)',
+    'Abnormal eye movements',
+    'Difficulty moving one or both eyes',
+    'Optic nerve swelling (Papilledema)',
+    'Headaches associated with vision changes',
+    'Temporary episodes of vision loss'
+  ],
+
+  treatment: [
+    'Comprehensive neuro-ophthalmic examination and visual function assessment.',
+    'Optical Coherence Tomography (OCT) to evaluate the optic nerve and retinal nerve fiber layer.',
+    'Visual field testing to detect and monitor neurological vision loss.',
+    'Neuro-imaging (MRI/CT scan) when required for accurate diagnosis.',
+    'Medical management of optic nerve diseases and neurological eye disorders.',
+    'Treatment of double vision using prism glasses, medications, or other appropriate therapies.',
+    'Collaborative care with neurologists, neurosurgeons, and other specialists for complex neurological conditions.',
+    'Regular follow-up evaluations to monitor disease progression and preserve vision.'
+  ],
+
+  faqs: [
+    {
+      q: 'What is Neuro-Ophthalmology?',
+      a: 'Neuro-Ophthalmology is a specialized branch of eye care that diagnoses and treats vision problems caused by diseases affecting the optic nerve, brain, and nervous system.'
+    },
+    {
+      q: 'When should I see a Neuro-Ophthalmologist?',
+      a: 'You should seek evaluation if you experience sudden vision loss, double vision, unexplained visual disturbances, abnormal eye movements, or vision changes associated with headaches or neurological symptoms.'
+    },
+    {
+      q: 'What conditions are treated in Neuro-Ophthalmology?',
+      a: 'Common conditions include optic neuritis, papilledema, optic neuropathy, cranial nerve palsies, visual field defects, double vision, and neurological disorders affecting vision.'
+    },
+    {
+      q: 'What tests are performed during a Neuro-Ophthalmology evaluation?',
+      a: 'The evaluation may include a detailed eye examination, visual field testing, OCT imaging, pupil assessment, eye movement analysis, and MRI or CT scans when necessary.'
+    },
+    {
+      q: 'Can neurological diseases affect vision?',
+      a: 'Yes. Conditions such as stroke, multiple sclerosis, brain tumors, diabetes, and other neurological disorders can significantly affect vision and eye movements.'
+    },
+    {
+      q: 'Can Neuro-Ophthalmic conditions be treated?',
+      a: 'Many neuro-ophthalmic conditions can be effectively managed with early diagnosis, appropriate medications, surgery when required, and coordinated care with neurological specialists.'
+    }
+  ],
+
+  image: '/Services/Neuro-Ophthalmology.jpg'
+}
+];
 
 
 export type Doctor = {
@@ -343,7 +846,7 @@ export const BLOG = [
   title: 'Cataract Surgery: Myths vs. Facts',
   category: 'Treatment',
   date: '02 Jun 2026',
-  excerpt: 'Is it too early? Will it come back? We bust the most common cataract myths with clear, expert answers.',
+  excerpt: 'Is it too early? Will it come back? We bust the most common cataract myths with clear, expert as.',
   image: 'IMG_BLOG2',
   author: 'Dr. Renu Mehta'
 },
