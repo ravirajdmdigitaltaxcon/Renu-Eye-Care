@@ -42,24 +42,6 @@ export function TestimonialsPage() {
         </div>
       </section>
 
-      <section className="bg-brand-section/50 py-16">
-        <div className="mx-auto max-w-container px-4 sm:px-6">
-          <SectionTitle eyebrow="Video Reviews" title="Hear it in their words" />
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {TESTIMONIALS.map((t) =>
-            <div key={t.name} className="group overflow-hidden rounded-card bg-brand-dark">
-                <div className="relative grid aspect-video place-items-center">
-                  <img src={img(t.image)} alt={t.name} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-50" />
-                  <span className="relative grid h-14 w-14 place-items-center rounded-full bg-white/90 text-brand-primary transition-transform group-hover:scale-110">
-                    <PlayIcon className="h-6 w-6 fill-brand-primary" />
-                  </span>
-                </div>
-                <p className="p-4 text-sm font-semibold text-white">{t.name} — {t.role}</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
     </>);
 
 }

@@ -1,10 +1,10 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { 
-  CheckCircle2Icon, 
-  PhoneIcon, 
-  ActivityIcon, 
-  StethoscopeIcon, 
-  ArrowRightIcon, 
+import {
+  CheckCircle2Icon,
+  PhoneIcon,
+  ActivityIcon,
+  StethoscopeIcon,
+  ArrowRightIcon,
   ClockIcon,
   ChevronRightIcon
 } from 'lucide-react';
@@ -20,9 +20,9 @@ export function ServiceDetails() {
   const { slug } = useParams();
   const service = SERVICES.find((s) => s.slug === slug);
   const { openModal } = useAppointment();
-  
+
   if (!service) return <Navigate to="/services" replace />;
-  
+
   const Icon = service.icon;
 
   return (
@@ -65,7 +65,7 @@ export function ServiceDetails() {
                 <ul className="mt-4 space-y-3">
                   {service.symptoms.map((s) => (
                     <li key={s} className="flex items-start gap-3 text-sm text-slate-600">
-                      <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" /> 
+                      <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-secondary" />
                       <span>{s}</span>
                     </li>
                   ))}
@@ -81,7 +81,7 @@ export function ServiceDetails() {
                 <ul className="mt-4 space-y-3">
                   {service.treatment.map((t) => (
                     <li key={t} className="flex items-start gap-3 text-sm text-slate-600">
-                      <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary" /> 
+                      <CheckCircle2Icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary" />
                       <span>{t}</span>
                     </li>
                   ))}
@@ -113,13 +113,13 @@ export function ServiceDetails() {
                   <p className="mt-2 text-sm text-white/80">
                     Speak directly to a specialist and plan your personalized treatment today.
                   </p>
-              <Button
-  className="mt-4 w-full bg-[#0d3d3c] text-white border-2  hover:bg-[#08C6C4]"
-  magnetic={false}
-  onClick={() => openModal({ department: service.title })}
->
-  Book Appointment
-</Button>
+                  <Button
+                    className="mt-4 w-full bg-[#0d3d3c] text-white border-2  hover:bg-[#08C6C4]"
+                    magnetic={false}
+                    onClick={() => openModal({ department: service.title })}
+                  >
+                    Book Appointment
+                  </Button>
                 </div>
               </div>
 
@@ -148,8 +148,8 @@ export function ServiceDetails() {
                 <ul className="mt-4 space-y-1">
                   {SERVICES.filter((s) => s.slug !== service.slug).slice(0, 6).map((s) => (
                     <li key={s.slug}>
-                      <Link 
-                        to={`/services/${s.slug}`} 
+                      <Link
+                        to={`/services/${s.slug}`}
                         className="group flex items-center justify-between rounded-lg px-3 py-2.5 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-brand-primary"
                       >
                         <span className="font-medium">{s.title}</span>

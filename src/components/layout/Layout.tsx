@@ -11,7 +11,6 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
 import { FloatingActions } from './FloatingActions';
-import { Cursor } from './Cursor';
 import { SmoothScroll } from './SmoothScroll';
 import { AppointmentModal } from '../appointment/AppointmentModal';
 
@@ -27,7 +26,7 @@ export function Layout() {
   return (
     <SmoothScroll>
       <ScrollToTop />
-      <Cursor />
+      
       <Navbar />
       <main className="min-h-screen w-full bg-brand-bg pt-20">
         <Outlet />

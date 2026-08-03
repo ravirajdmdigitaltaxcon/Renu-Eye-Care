@@ -27,13 +27,6 @@ const FOUNDERS = [
   }
 ];
 
-const MISSION_POINTS = [
-  'Deliver comprehensive eye care with international standards.',
-  'Make quality treatment affordable and accessible.',
-  'Utilize advanced technology for accurate diagnosis and treatment.',
-  'Promote preventive eye care through awareness and outreach.',
-  'Serve society with compassion, ethics, and excellence.'
-];
 
 export function About() {
   return (
@@ -121,39 +114,109 @@ export function About() {
           </div>
         </div>
 
-        {/* Leadership - Founder Cards (Premium Layout) */}
-        <div className="mt-20">
-          <SectionTitle align="center" eyebrow="Leadership" title="Meet Our Founders" />
-          
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {FOUNDERS.map((founder, i) => (
-              <Reveal key={founder.name} delay={i * 0.1}>
-                <div className="group h-full overflow-hidden rounded-card bg-white shadow-glass transition-all duration-300 hover:-translate-y-2 hover:shadow-float">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img 
-                      src={founder.img} 
-                      alt={founder.name} 
-                      loading="lazy"
-                      className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" 
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-brand-dark">{founder.name}</h3>
-                    <p className="text-sm font-medium text-brand-primary">{founder.role}</p>
-                    <p className="mt-4 text-sm text-slate-500 leading-relaxed">{founder.bio}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+        {/* Detailed Vision & Mission */}
+        <div className="mt-24 space-y-24">
+
+          {/* Vision */}
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+
+            {/* Vision Image */}
+            <div className="overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src="../../public/Home-section-Image.jpg"
+                alt="Our Vision"
+                className="h-[500px] w-full object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
+
+            {/* Vision Content */}
+            <div>
+              <h3 className="flex items-center gap-3 font-display text-3xl font-bold text-brand-dark">
+                <HeartHandshakeIcon className="h-8 w-8 text-brand-primary" />
+                Our Vision
+              </h3>
+
+              <p className="mt-6 text-lg leading-8 text-slate-600">
+                At <strong>Renu Eye Care Centre</strong>, our vision is to become the most
+                trusted destination for comprehensive eye care across Northeast India by
+                combining internationally recognized medical excellence with genuine
+                compassion. We strive to provide every patient with world-class treatment
+                through advanced technology, experienced specialists, and personalized
+                care.
+              </p>
+
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                We envision a future where preventable blindness is significantly reduced
+                through early diagnosis, innovative treatment, continuous research, and
+                community outreach. Our commitment is to make quality eye care
+                accessible, affordable, and life-changing for every generation.
+              </p>
+            </div>
+
           </div>
+
+          {/* Mission */}
+          <div className="grid items-center gap-14 lg:grid-cols-2">
+
+            {/* Mission Content */}
+            <div>
+
+              <h3 className="flex items-center gap-3 font-display text-3xl font-bold text-brand-dark">
+                <TargetIcon className="h-8 w-8 text-brand-primary" />
+                Our Mission
+              </h3>
+
+              <p className="mt-5 text-lg leading-8 text-slate-600">
+                Every patient deserves the highest standard of eye care delivered with
+                empathy, integrity, and clinical excellence. Our mission is to protect,
+                restore, and enhance vision through innovation, ethical medical
+                practices, and patient-centered care.
+              </p>
+
+              <ul className="mt-8 space-y-5">
+                {[
+                  "Deliver comprehensive eye care using advanced diagnostic and surgical technology.",
+                  "Provide accurate diagnosis and personalized treatment plans for every patient.",
+                  "Maintain the highest standards of patient safety, ethics, and medical excellence.",
+                  "Promote preventive eye care through awareness programs and regular eye screening camps.",
+                  "Make world-class eye care affordable and accessible to every section of society.",
+                  "Continuously adopt the latest innovations and global best practices in ophthalmology.",
+                  "Treat every patient with compassion, dignity, respect, and transparency."
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-4">
+                    <CheckCircleIcon className="mt-1 h-6 w-6 shrink-0 text-brand-primary" />
+                    <span className="leading-7 text-slate-600">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+            </div>
+
+            {/* Mission Image */}
+            <div className="overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src="../../public/f95f15aa-8bf2-4df4-8f7d-e58a6764fb92.jpg"
+                alt="Our Mission"
+                className="h-[500px] w-full object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
+
+          </div>
+
         </div>
 
         {/* Maeyes Foundation */}
         <div className="mt-20 overflow-hidden rounded-card bg-brand-dark p-8 text-white shadow-glass sm:p-12">
           <div className="grid gap-8 lg:grid-cols-2 items-center">
             <div>
-              <span className="grid h-12 w-12 place-items-center rounded-btn bg-brand-secondary text-white">
-                <SparklesIcon className="h-6 w-6" />
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg border border-gray-200">
+                <img
+                  src="https://maeyesfoundation.org/images/icon.webp"
+                  alt="MA Eyes Foundation Logo"
+                  className="h-10 w-10 object-contain"
+                />
               </span>
               <h3 className="mt-4 font-display text-2xl font-bold">Maeyes Foundation</h3>
               <p className="mt-3 text-white/80 leading-relaxed">
@@ -168,32 +231,32 @@ export function About() {
           </div>
         </div>
 
-        {/* Detailed Vision & Mission */}
-        <div className="mt-20 grid gap-12 lg:grid-cols-2">
-          <div>
-            <h3 className="font-display text-2xl font-bold text-brand-dark flex items-center gap-3">
-              <HeartHandshakeIcon className="h-7 w-7 text-brand-primary" /> Our Vision
-            </h3>
-            <p className="mt-4 text-slate-600 leading-relaxed text-lg">
-              To make Dibrugarh, Assam's newest metropolitan city, a destination for world-class comprehensive eye care, combining advanced technology, experienced specialists, and compassionate healthcare under one roof.
-            </p>
-          </div>
-          
-          <div>
-            <h3 className="font-display text-2xl font-bold text-brand-dark flex items-center gap-3">
-              <TargetIcon className="h-7 w-7 text-brand-primary" /> Our Mission
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {MISSION_POINTS.map((point) => (
-                <li key={point} className="flex items-start gap-3 text-slate-600">
-                  <CheckCircleIcon className="mt-1 h-5 w-5 shrink-0 text-brand-primary" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Leadership - Founder Cards (Premium Layout) */}
+        <div className="mt-20">
+          <SectionTitle align="center" eyebrow="Leadership" title="Meet Our Founders" />
+
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {FOUNDERS.map((founder, i) => (
+              <Reveal key={founder.name} delay={i * 0.1}>
+                <div className="group h-full overflow-hidden rounded-card bg-white shadow-glass transition-all duration-300 hover:-translate-y-2 hover:shadow-float">
+                  <div className="aspect-[4/5] overflow-hidden">
+                    <img
+                      src={founder.img}
+                      alt={founder.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-xl font-bold text-brand-dark">{founder.name}</h3>
+                    <p className="text-sm font-medium text-brand-primary">{founder.role}</p>
+                    <p className="mt-4 text-sm text-slate-500 leading-relaxed">{founder.bio}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
-
       </section>
     </>
   );

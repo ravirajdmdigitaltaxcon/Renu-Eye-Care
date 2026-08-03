@@ -3,8 +3,9 @@ import {
   CheckCircle2Icon,
   ArrowRightIcon,
   TargetIcon,
-  HeartHandshakeIcon } from
-'lucide-react';
+  HeartHandshakeIcon
+} from
+  'lucide-react';
 import { Hero } from '../components/home/Hero';
 import { SectionTitle } from '../components/ui/SectionTitle';
 import { Counter } from '../components/ui/Counter';
@@ -19,10 +20,10 @@ import { STATS, SERVICES, DOCTORS, TECHNOLOGIES, FAQS, BLOG } from '../data/site
 import { IMAGES, img } from '../data/images';
 
 const WHY = [
-'Internationally trained, super-specialist surgeons',
-'Bladeless, latest-generation surgical technology',
-'Transparent pricing with cashless insurance',
-'Day-care procedures with rapid recovery'];
+  'Internationally trained, super-specialist surgeons',
+  'Bladeless, latest-generation surgical technology',
+  'Transparent pricing with cashless insurance',
+  'Day-care procedures with rapid recovery'];
 
 
 export function Home() {
@@ -36,7 +37,7 @@ export function Home() {
       <section className="relative z-10 mx-auto -mt-8 max-w-container px-4 sm:px-6">
         <div className="grid grid-cols-2 gap-4 rounded-card bg-white p-6 shadow-glass sm:p-8 lg:grid-cols-4">
           {STATS.map((s) =>
-          <Reveal key={s.label} scale className="text-center">
+            <Reveal key={s.label} scale className="text-center">
               <p className="text-3xl font-bold text-brand-primary sm:text-4xl">
                 <Counter value={s.value} suffix={s.suffix} />
               </p>
@@ -68,7 +69,7 @@ export function Home() {
               eyebrow="About Us"
               title="Compassionate eye care, always within reach"
               subtitle="For over two decades, Renu Eye Care Centre has combined clinical excellence with genuine warmth — treating every patient like family." />
-            
+
             <div className="mt-6 space-y-5">
               <div className="flex gap-4">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-btn bg-brand-section text-brand-primary">
@@ -107,10 +108,10 @@ export function Home() {
             eyebrow="Our Specialities"
             title="Comprehensive care for every part of your eye"
             subtitle="From routine check-ups to the most advanced surgeries, our super-specialists have you covered." />
-          
+
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.slice(0, 6).map((s, i) =>
-            <ServiceCard key={s.slug} service={s} index={i} />
+              <ServiceCard key={s.slug} service={s} index={i} />
             )}
           </div>
           <div className="mt-10 text-center">
@@ -129,10 +130,10 @@ export function Home() {
               align="left"
               eyebrow="Why Choose Us"
               title="A premium experience, built around you" />
-            
+
             <ul className="mt-6 space-y-4">
               {WHY.map((w, i) =>
-              <Reveal key={w} delay={i * 0.05}>
+                <Reveal key={w} delay={i * 0.05}>
                   <li className="flex items-start gap-3">
                     <CheckCircle2Icon className="mt-0.5 h-5 w-5 shrink-0 text-brand-secondary" />
                     <span className="text-slate-600">{w}</span>
@@ -142,40 +143,40 @@ export function Home() {
             </ul>
             <div className="mt-8 grid grid-cols-3 gap-4">
               {[
-              { v: 100000, s: '+', l: 'Patients' },
-              { v: 40000, s: '+', l: 'Surgeries' },
-              { v: 98, s: '%', l: 'Success' }].
-              map((c) =>
-              <div key={c.l} className="rounded-card bg-brand-section p-4 text-center">
-                  <p className="text-2xl font-bold text-brand-primary">
-                    <Counter value={c.v} suffix={c.s} />
-                  </p>
-                  <p className="text-xs text-slate-500">{c.l}</p>
-                </div>
-              )}
+                { v: 300, s: '+', l: 'Patients' },
+                { v: 20, s: '+', l: 'Surgeries' },
+                { v: 99.9, s: '%', l: 'Success' }].
+                map((c) =>
+                  <div key={c.l} className="rounded-card bg-brand-section p-4 text-center">
+                    <p className="text-2xl font-bold text-brand-primary">
+                      <Counter value={c.v} suffix={c.s} />
+                    </p>
+                    <p className="text-xs text-slate-500">{c.l}</p>
+                  </div>
+                )}
             </div>
           </div>
           <Reveal scale>
-         <div className="group relative overflow-hidden rounded-img shadow-glass">
-  <img
-    src={IMAGES.IMG_SERVICE}
-    alt="Advanced eye surgery technology"
-    width={600}
-    height={450}
-    loading="lazy"
-    decoding="async"
-    className="w-full object-cover"
-  />
-<iframe
-  className="absolute inset-0 h-full w-full"
-  src="https://www.youtube.com/embed/6CLMXZ4CdO0?start=15&controls=1&rel=0&modestbranding=1&playsinline=1"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; ; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-/>
-</div>
+            <div className="group relative overflow-hidden rounded-img shadow-glass">
+              <img
+                src={IMAGES.IMG_SERVICE}
+                alt="Advanced eye surgery technology"
+                width={600}
+                height={450}
+                loading="lazy"
+                decoding="async"
+                className="w-full object-cover"
+              />
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/6CLMXZ4CdO0?start=15&controls=1&rel=0&modestbranding=1&playsinline=1"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; ; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -187,10 +188,10 @@ export function Home() {
             eyebrow="Meet the Team"
             title="Expert surgeons who genuinely care"
             subtitle="Our specialists bring decades of combined experience and a warm, personal touch." />
-          
+
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {DOCTORS.map((d, i) =>
-            <DoctorCard key={d.slug} doctor={d} index={i} />
+              <DoctorCard key={d.slug} doctor={d} index={i} />
             )}
           </div>
         </div>
@@ -202,25 +203,41 @@ export function Home() {
           eyebrow="Technology"
           title="Precision powered by the latest innovation"
           subtitle="We invest continuously in the equipment that makes safer, sharper outcomes possible." />
-        
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {TECHNOLOGIES.map((tech, i) => {
-            const Icon = tech.icon;
-            return (
-              <Reveal key={tech.name} delay={i % 3 * 0.06}>
-                <div className="flex items-center gap-4 rounded-card border border-slate-100 bg-white p-5 shadow-glass transition-all hover:-translate-y-1 hover:shadow-float">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-btn bg-brand-primary text-white">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <h4 className="font-display font-bold text-brand-dark">{tech.name}</h4>
-                    <p className="text-sm text-slate-500">{tech.desc}</p>
-                  </div>
-                </div>
-              </Reveal>);
 
-          })}
+        <div className="mt-14 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+  {TECHNOLOGIES.map((tech, i) => {
+    const Icon = tech.icon;
+
+    return (
+      <Reveal key={tech.name} delay={i * 0.05}>
+        <div className="group relative overflow-hidden rounded-3xl border border-slate-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl">
+
+          {/* Top Accent */}
+          <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-brand-primary via-cyan-500 to-brand-secondary" />
+
+          {/* Icon */}
+          <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-primary to-cyan-500 text-white shadow-lg transition-transform duration-300 group-hover:scale-110">
+            <Icon className="h-8 w-8" />
+          </div>
+
+          {/* Title */}
+          <h3 className="font-display text-xl font-bold text-brand-dark leading-snug">
+            {tech.name}
+          </h3>
+
+          {/* Divider */}
+          <div className="my-4 h-px w-14 bg-brand-primary/30" />
+
+          {/* Description */}
+          <p className="leading-7 text-slate-600">
+            {tech.desc}
+          </p>
+
         </div>
+      </Reveal>
+    );
+  })}
+</div>
       </section>
 
       {/* Know your eyes */}
@@ -231,7 +248,7 @@ export function Home() {
             eyebrow="Know Your Eyes"
             title={<span className="text-white">Explore the anatomy of your eye</span>}
             subtitle="Our most interactive feature — hover and click each part to understand how your vision works." />
-          
+
           <div className="mt-12">
             <EyeExplorer />
           </div>
@@ -248,24 +265,24 @@ export function Home() {
         <SectionTitle
           eyebrow="From Our Blog"
           title="Eye-health insights from our experts" />
-        
+
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {BLOG.map((post, i) =>
-          <Reveal key={post.slug} delay={i * 0.08}>
+            <Reveal key={post.slug} delay={i * 0.08}>
               <Link
-              to={`/blog/${post.slug}`}
-              className="group flex h-full flex-col overflow-hidden rounded-card bg-white shadow-glass transition-all hover:-translate-y-1 hover:shadow-float">
-              
+                to={`/blog/${post.slug}`}
+                className="group flex h-full flex-col overflow-hidden rounded-card bg-white shadow-glass transition-all hover:-translate-y-1 hover:shadow-float">
+
                 <div className="relative overflow-hidden">
                   <img
-                  src={img(post.image)}
-                  alt={post.title}
-                  width={600}
-                  height={400}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[3/2] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                
+                    src={img(post.image)}
+                    alt={post.title}
+                    width={600}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[3/2] w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
                   <span className="absolute left-3 top-3 rounded-full bg-brand-primary px-3 py-1 text-xs font-semibold text-white">
                     {post.category}
                   </span>
@@ -309,12 +326,12 @@ export function Home() {
           </p>
           <div className="relative mt-8 flex flex-wrap justify-center gap-4">
             <Button
-  size="lg"
-  className="rounded-xl bg-[#00a8ab] px-8 py-3 text-base font-semibold text-white border-2 border-white shadow-md transition-all duration-300 hover:bg-[#145654] hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
-  onClick={() => openModal()}
->
-  Book Appointment
-</Button>
+              size="lg"
+              className="rounded-xl bg-[#00a8ab] px-8 py-3 text-base font-semibold text-white border-2 border-white shadow-md transition-all duration-300 hover:bg-[#145654] hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
+              onClick={() => openModal()}
+            >
+              Book Appointment
+            </Button>
             <ButtonLink to="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-[#145654] hover:text-black">
               Contact Us
             </ButtonLink>

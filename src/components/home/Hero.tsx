@@ -2,9 +2,7 @@ import React, { memo } from "react";
 import { motion } from "framer-motion";
 import {
   StarIcon,
-  AwardIcon,
   ArrowRightIcon,
-  PlayIcon,
   ShieldCheckIcon,
 } from "lucide-react";
 import { Button, ButtonLink } from "../ui/Button";
@@ -109,12 +107,7 @@ export const Hero = memo(function Hero() {
             <ButtonLink to="/services" variant="outline" size="lg">
               Explore Services
             </ButtonLink>
-            <button className="group flex items-center gap-3 text-sm font-semibold text-brand-dark">
-              <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-brand-primary shadow-float transition-transform group-hover:scale-110">
-                <PlayIcon className="h-4 w-4 fill-brand-primary" />
-              </span>
-              Watch our story
-            </button>
+           
           </motion.div>
         </motion.div>
 
