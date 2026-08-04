@@ -123,7 +123,7 @@ export function About() {
             {/* Vision Image */}
             <div className="overflow-hidden rounded-3xl shadow-2xl">
               <img
-                src="../../public/Home-section-Image.jpg"
+                src="/Home-section-Image.jpg"
                 alt="Our Vision"
                 className="h-[500px] w-full object-cover transition duration-700 hover:scale-105"
               />
@@ -197,7 +197,7 @@ export function About() {
             {/* Mission Image */}
             <div className="overflow-hidden rounded-3xl shadow-2xl">
               <img
-                src="../../public/f95f15aa-8bf2-4df4-8f7d-e58a6764fb92.jpg"
+                src="/f95f15aa-8bf2-4df4-8f7d-e58a6764fb92.jpg"
                 alt="Our Mission"
                 className="h-[500px] w-full object-cover transition duration-700 hover:scale-105"
               />

@@ -9,15 +9,17 @@ import {
   ClockIcon,
   FacebookIcon,
   InstagramIcon,
-  TwitterIcon,
-  LinkedinIcon,
+  GlobeIcon,
   SendIcon,
   CheckIcon
-} from
-  'lucide-react';
-import { CLINIC, SERVICES, DOCTORS } from '../../data/site';
+} from 'lucide-react';
+import { CLINIC, SERVICES } from '../../data/site';
 
-const socials = [FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon];
+const socials = [
+  { Icon: FacebookIcon, url: 'https://www.facebook.com/renueyecare', label: 'Facebook' },
+  { Icon: InstagramIcon, url: 'https://www.instagram.com/renueyecare', label: 'Instagram' },
+  { Icon: GlobeIcon, url: 'https://share.google/iE1LHGc115XQrgaeq', label: 'Google Business Profile' }
+];
 
 export function Footer() {
   const [subscribed, setSubscribed] = useState(false);
@@ -113,13 +115,15 @@ export function Footer() {
               {subscribed && <p className="mt-2 text-xs text-brand-secondary">Thanks for subscribing!</p>}
             </form>
             <div className="mt-6 flex gap-3">
-              {socials.map((Icon, i) =>
+              {socials.map(({ Icon, url, label }, i) =>
                 <motion.a
                   key={i}
-                  href="#"
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ y: -3 }}
                   className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-slate-300 transition-colors hover:bg-brand-primary hover:text-white"
-                  aria-label="Social link">
+                  aria-label={label}>
 
                   <Icon className="h-4 w-4" />
                 </motion.a>
@@ -149,6 +153,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>);
-
+    </footer>
+  );
 }
