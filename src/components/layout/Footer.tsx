@@ -145,7 +145,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} {CLINIC.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {CLINIC.name}. Desgined By <a href="https://agarwaltaxcon.in/" style={{ color: "red", fontWeight: "bold" }}>Agarwal Taxcon Pvt. Ltd</a>All rights reserved.</p>
           <div className="flex gap-5">
             <Link to="/privacy" className="hover:text-brand-secondary">Privacy Policy</Link>
             <Link to="/faq" className="hover:text-brand-secondary">FAQ</Link>
