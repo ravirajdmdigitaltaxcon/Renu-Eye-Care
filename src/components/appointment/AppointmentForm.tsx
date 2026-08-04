@@ -46,12 +46,10 @@ const TIME_SLOTS = [
   "05:00 PM - 06:00 PM"
 ];
 
-// Premium field classes with icon padding
 const field = 'w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 pl-12 text-sm text-brand-dark placeholder:text-slate-400 transition-all focus:border-brand-primary focus:outline-none focus:ring-4 focus:ring-brand-primary/10';
 const labelCls = 'mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-500';
 const sectionCls = 'flex items-center gap-2 text-base font-bold text-brand-dark mb-5 col-span-full mt-10 first:mt-0';
 
-// Icon wrapper inside input
 const InputIcon = ({ icon: Icon }: { icon: React.ElementType }) => (
   <Icon className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
 );
@@ -91,15 +89,13 @@ export const AppointmentForm = memo(function AppointmentForm({
   ) => {
     let value = e.target.value;
     
-    // Restrict phone input to exactly 10 digits
     if (e.target.name === 'mobile') {
       value = value.replace(/\D/g, '').slice(0, 10);
     }
     
-    // Restrict Age to exactly 2 digits (1-99)
     if (e.target.name === 'age') {
-      value = value.replace(/\D/g, '').slice(0, 2); // Remove non-digits, max 2 chars
-      if (Number(value) === 0) value = ''; // Prevent starting with 0 or being just "0"
+      value = value.replace(/\D/g, '').slice(0, 2);
+      if (Number(value) === 0) value = '';
     }
     
     setFormData({
@@ -111,7 +107,6 @@ export const AppointmentForm = memo(function AppointmentForm({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
-    // Validation checks
     if (!formData.email.endsWith('@gmail.com')) {
       alert("Please use a valid @gmail.com email address.");
       return;
@@ -124,16 +119,35 @@ export const AppointmentForm = memo(function AppointmentForm({
     setLoading(true);
 
     try {
-      // Append +91 to phone before sending email
-      const payload = { ...formData, mobile: `+91 ${formData.mobile}` };
+      const payload = { 
+        ...formData, 
+        mobile: `+91 ${formData.mobile}`,
+        reply_to: formData.email 
+      };
 
+      // =================================================================
+      // EMAILJS SETUP: Yahan apni IDs dalna hai
+      // =================================================================
+
+      // 1. ADMIN KE LIYE (Jisme puri details aati hai)
+      // "To Email" mein clinic ki email honi chahiye.
       await emailjs.send(
-        "service_3kf7qsm",
-        "template_nv8j5ef",
+        "service_n6d7f5h",           // <-- Yeh Service ID hai (dono ke liye same)
+        "template_iz9cvab",          // <-- ADMIN KA TEMPLATE ID YAHAN DAALEIN
         payload,
-        "fdTb13vM3ZpEcu6Bz"
+        "fdTb13vM3ZpEcu6Bz"          // <-- Yeh Public Key hai
       );
-      
+
+      // 2. PATIENT KE LIYE (Jisme Thank You message aata hai)
+      // "To Email" mein {{email}} hona chahiye.
+      await emailjs.send(
+        "service_n6d7f5h",           // <-- Yeh Service ID hai (dono ke liye same)
+        "template_9cjc4yh",       // <-- PATIENT KA TEMPLATE ID YAHAN DAALEIN
+        payload,
+        "fdTb13vM3ZpEcu6Bz"          // <-- Yeh Public Key hai
+      );
+      // =================================================================
+
       setSubmitted(true);
       onSuccess?.();
     } catch (error) {
