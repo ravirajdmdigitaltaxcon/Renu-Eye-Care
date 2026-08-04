@@ -40,12 +40,12 @@ export const DoctorCard = memo(function DoctorCard({
         <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-primary">
           {doctor.experience}
         </span>
-        <button
+        {/* <button
           onClick={() => openModal({ doctor: doctor.name })}
           className="absolute inset-x-4 bottom-4 flex translate-y-4 items-center justify-center gap-2 rounded-btn bg-white py-2.5 text-sm font-btn font-semibold text-brand-primary opacity-0 shadow-float transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
         >
           <CalendarIcon className="h-4 w-4" /> Book Appointment
-        </button>
+        </button> */}
       </div>
       <div className="p-5">
         <Link to={`/doctors/${doctor.slug}`}>
