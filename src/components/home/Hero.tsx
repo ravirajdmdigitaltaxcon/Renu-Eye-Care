@@ -23,7 +23,6 @@ const item = {
 };
 
 // Static particles — no JS animation, uses CSS (transform/opacity only via animate-floaty).
-// Was 18 Framer Motion infinite loops; each adds a RAF callback. Removed entirely.
 const PARTICLE_POSITIONS = [
   "5% 15%",
   "18% 70%",
@@ -69,9 +68,10 @@ export const Hero = memo(function Hero() {
       </div>
       <StaticParticles />
 
-      <div className="relative mx-auto grid max-w-container items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24 ">
+      <div className="relative mx-auto grid max-w-container items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-24">
         {/* Left */}
-        <motion.div variants={container} initial="hidden" animate="show">
+        {/* Added text-center and mx-auto for mobile, reverting to left-align on large screens */}
+        <motion.div variants={container} initial="hidden" animate="show" className="text-center lg:text-left">
           <motion.span
             variants={item}
             className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-btn font-semibold text-brand-primary shadow-float"
@@ -90,7 +90,7 @@ export const Hero = memo(function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-5 max-w-lg text-lg leading-relaxed text-slate-500"
+            className="mt-5 max-w-lg mx-auto lg:mx-0 text-lg leading-relaxed text-slate-500"
           >
             Premium, compassionate eye care powered by the latest technology.
             From bladeless LASIK to advanced retina surgery — your vision is in
@@ -99,7 +99,7 @@ export const Hero = memo(function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-8 flex flex-wrap items-center gap-4"
+            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4"
           >
             <Button size="lg" onClick={() => openModal()}>
               Book Appointment <ArrowRightIcon className="h-4 w-4" />
@@ -107,7 +107,6 @@ export const Hero = memo(function Hero() {
             <ButtonLink to="/services" variant="outline" size="lg">
               Explore Services
             </ButtonLink>
-           
           </motion.div>
         </motion.div>
 
@@ -116,10 +115,10 @@ export const Hero = memo(function Hero() {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative mx-auto w-full max-w-md"
+          className="relative mx-auto w-full max-w-[300px] sm:max-w-md"
         >
-          <div className="relative overflow-hidden rounded-img bg-brand-section shadow-glass w-[560px]">
-          
+          {/* Removed fixed w-[560px] and added w-full with aspect ratio for perfect scaling */}
+          <div className="relative overflow-hidden rounded-img bg-brand-section shadow-glass w-full aspect-[4/5] sm:aspect-[3/4]">
             <img
               src={IMAGES.IMG_HERO_DOCTOR}
               alt="Lead ophthalmologist at Renu Eye Care Centre"
@@ -132,12 +131,12 @@ export const Hero = memo(function Hero() {
             />
           </div>
 
-          {/* Reviews floating card */}
+          {/* Reviews floating card - adjusted positions to not break on small screens */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.75 }}
-            className="absolute -left-6 bottom-10 rounded-btn bg-white px-4 py-3 shadow-glass animate-floaty"
+            className="absolute -left-2 sm:-left-6 bottom-6 sm:bottom-10 rounded-btn bg-white px-3 py-2 sm:px-4 sm:py-3 shadow-glass animate-floaty"
           >
             <div className="flex items-center gap-1 text-amber-400">
               {[...Array(5)].map((_, i) => (
